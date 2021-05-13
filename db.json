@@ -84,5 +84,21 @@
 			"imgalt2":"texto de la imagen 2",
 			"id": 4
 		}
+	],
+	"writers":[
+		{
+			"name":"Juan Perez",
+			"email": "aaa@gmail.com",
+			"password":"123",
+			"online":false,
+			"id":1
+		},
+		{
+			"name":"Miguel Perez",
+			"email": "bbb@gmail.com",
+			"password":"123",
+			"online":false,
+			"id":2
+		}
 	]
 }

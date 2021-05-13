@@ -26,7 +26,7 @@ const consultarNews = async()=>{
     }
     console.log(news);   
     } catch (error) {
-      console.log(error)
+      console.log(error);
       alert("Rolling News no está rodando hoy, toca volver a la edición en papel");
   }
 };

@@ -1,6 +1,8 @@
 import React from 'react'
-import { Button, Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import {  Nav, Navbar, NavDropdown } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
+import ModalSuscripcion from './ModalSuscripcion'
+import ModalLogin from './ModalLogin'
 
 export default function Navegacion(props) {
 
@@ -21,8 +23,8 @@ export default function Navegacion(props) {
       </NavDropdown>
       </Nav>
       <Nav className="mr-5">
-      <Button className="m-2" type="btn" >Suscribirse</Button>
-      <Button className="m-2" type="btn">Log In</Button>
+      <ModalSuscripcion/>
+      <ModalLogin/>
     </Nav>
   </Navbar.Collapse>
 </Navbar>
