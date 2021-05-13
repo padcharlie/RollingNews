@@ -3,7 +3,6 @@ import { Button, Nav, Navbar, NavDropdown } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 
 export default function Navegacion(props) {
-  console.log("categorias", props.cats);
 
     return (
         <Navbar bg="light" expand="lg">

@@ -8,6 +8,7 @@ import Pie from './components/common/Pie';
 import Categoria from './components/pages/Categoria';
 import Error404 from './components/pages/Error404';
 import { useEffect, useState } from 'react';
+import Detalle from './components/pages/Detalle';
 
 function App() {
 
@@ -57,6 +58,9 @@ useEffect(() => {
       </Route>
       <Route exact path="/categorias/:name" > 
         <Categoria news={news} cats={cats}/>
+      </Route>
+      <Route exact path="/noticias/:title" > 
+        <Detalle news={news}/>
       </Route>
       <Route exact path="/*">
         <Error404/>
