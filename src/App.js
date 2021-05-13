@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { Fragment } from 'react/cjs/react.production.min';
 import { BrowserRouter as Router, Switch,  Route} from "react-router-dom";
@@ -16,7 +15,7 @@ const URLCAT = process.env.REACT_APP_API_URL_CAT;
 const URLNEWS = process.env.REACT_APP_API_URL_NEWS;
 
 const [news,setNews]=useState([]);
-const [cat,setCat]=useState([]);
+const [cats,setCats]=useState([]);
 
 const consultarNews = async()=>{
     try {
@@ -35,7 +34,7 @@ const consultarCats = async()=>{
   try {
   const responsecats = await fetch(URLCAT);
   if (responsecats.status === 200){
-    setCat(await responsecats.json());
+    setCats(await responsecats.json());
   }
   } catch (error) {
     console.log(error)
@@ -51,13 +50,13 @@ useEffect(() => {
   return (
 <Fragment>
   <Router>
-    <Navegacion/>
+    <Navegacion cats={cats}/>
     <Switch>
       <Route exact path="/" >
-        <Landing cat={cat}/>
+        <Landing />
       </Route>
-      <Route exact path="/categorias" > 
-        <Categoria news={news} cat={cat}/>
+      <Route exact path="/categorias/:name" > 
+        <Categoria news={news} cats={cats}/>
       </Route>
       <Route exact path="/*">
         <Error404/>
