@@ -85,7 +85,7 @@
 			"id": 4
 		}
 	],
-	"writers":[
+	"admin":[
 		{
 			"name":"Juan Perez",
 			"email": "aaa@gmail.com",
