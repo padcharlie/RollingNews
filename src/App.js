@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { Fragment } from 'react/cjs/react.production.min';
 import { BrowserRouter as Router, Switch,  Route} from "react-router-dom";
@@ -7,12 +6,14 @@ import Navegacion from './components/common/Navegacion';
 import Landing from './components/pages/Landing';
 import Pie from './components/common/Pie';
 import Categoria from './components/pages/Categoria';
+import Bannersuperior from './components/common/Bannersuperior/Bannerclima/Bannersuperior';
 
 function App() {
   return (
 <Fragment>
   <Router>
     <Navegacion/>
+    <Bannersuperior/>
     <Switch>
       <Route exact path="/">
         <Landing/>
@@ -21,9 +22,10 @@ function App() {
         <Categoria/>
       </Route>
     </Switch>
+    
     <Pie/>
   </Router>
-
+   
 </Fragment>    
   );
 }
