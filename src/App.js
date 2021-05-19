@@ -25,7 +25,6 @@ const consultarNews = async()=>{
     if (responsenews.status === 200){
       setNews(await responsenews.json());
     }
-    console.log(news);   
     } catch (error) {
       console.log(error);
       alert("Rolling News no está rodando hoy, toca volver a la edición en papel");
