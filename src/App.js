@@ -7,9 +7,9 @@ import Landing from './components/pages/Landing';
 import Pie from './components/common/Pie';
 import Categoria from './components/pages/Categoria';
 import Error404 from './components/pages/Error404';
-import Bannersuperior from './components/common/Bannersuperior/Bannerclima/Bannersuperior';
 import { useEffect, useState } from 'react';
 import Detalle from './components/pages/Detalle';
+import AdminPage from './components/pages/AdminPage';
 
 function App() {
 
@@ -18,13 +18,14 @@ const URLNEWS = process.env.REACT_APP_API_URL_NEWS;
 
 const [news,setNews]=useState([]);
 const [cats,setCats]=useState([]);
+const [admin,setAdmin]=useState(true);
 
 const consultarNews = async()=>{
     try {
     const responsenews = await fetch(URLNEWS);
     if (responsenews.status === 200){
       setNews(await responsenews.json());
-    }
+    };
     } catch (error) {
       console.log(error);
       alert("Rolling News no está rodando hoy, toca volver a la edición en papel");
@@ -51,11 +52,12 @@ useEffect(() => {
   return (
 <Fragment>
   <Router>
-    <Navegacion cats={cats}/>
-    <Bannersuperior/>
+    <Navegacion cats={cats} admin={admin}/>
     <Switch>
       <Route exact path="/" >
         <Landing />
+      </Route><Route exact path="/admin" >
+        <AdminPage news={news} cats={cats} admin={admin} />
       </Route>
       <Route exact path="/categorias/:name" > 
         <Categoria news={news} cats={cats}/>

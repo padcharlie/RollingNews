@@ -1,11 +1,21 @@
 import React from 'react'
 import {  Nav, Navbar, NavDropdown } from 'react-bootstrap'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import ModalSuscripcion from './ModalSuscripcion'
 import ModalLogin from './ModalLogin'
+import { Button } from 'react-bootstrap'
+import { faTools } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function Navegacion(props) {
 
+  const mostrarAdmin = ()=>{
+    if(props.admin === true){
+      return(
+      <Button className="btn m-2 btn-light"><Link style={{ textDecoration: 'none'}} to='/admin'><FontAwesomeIcon icon={faTools}/></Link></Button>
+      )
+    }
+  }
     return (
         <Navbar bg="light" expand="lg">
   <Navbar.Brand href="#home">Rolling News</Navbar.Brand>
@@ -25,6 +35,7 @@ export default function Navegacion(props) {
       <Nav className="mr-5">
       <ModalSuscripcion/>
       <ModalLogin/>
+      {mostrarAdmin()}
     </Nav>
   </Navbar.Collapse>
 </Navbar>

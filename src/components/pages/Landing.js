@@ -1,9 +1,12 @@
-import React from 'react'
+import {Fragment} from 'react'
+import Bannersuperior from '../common/Bannersuperior/Bannerclima/Bannersuperior';
+
 
 export default function Landing() {
     return (
-        <div>
-            f
-        </div>
+    <Fragment>
+    <Bannersuperior/>
+
+    </Fragment>
     )
 }

@@ -3,7 +3,7 @@ import { Form, Row, Col, Label, FormGroup, Input } from "reactstrap";
 import React from "react";
 import { useState } from "react";
 
-export default function ModalSuscripcion() {
+export default function ModalLogin() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
