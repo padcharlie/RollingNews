@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom'
 import ModalSuscripcion from './ModalSuscripcion'
 import ModalLogin from './ModalLogin'
 import { Button } from 'react-bootstrap'
-import { faTools } from '@fortawesome/free-solid-svg-icons'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function Navegacion(props) {
@@ -12,7 +12,7 @@ export default function Navegacion(props) {
   const mostrarAdmin = ()=>{
     if(props.admin === true){
       return(
-      <Button className="btn m-2 btn-light"><Link style={{ textDecoration: 'none'}} to='/admin'><FontAwesomeIcon icon={faTools}/></Link></Button>
+      <Button className="btn m-2 btn-light"><Link style={{ textDecoration: 'none'}} to='/admin/agregar'><FontAwesomeIcon icon={faPlus}/></Link></Button>
       )
     }
   }
