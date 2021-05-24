@@ -61,7 +61,7 @@ useEffect(() => {
         <AdminPage news={news} cats={cats} admin={admin} />
       </Route>
       <Route exact path="/admin/agregar" >
-        <AgregarNoticia news={news} cats={cats} admin={admin} />
+        <AgregarNoticia news={news} cats={cats} admin={admin} consultarNews={consultarNews} />
       </Route>
       <Route exact path="/categorias/:name" > 
         <Categoria news={news} cats={cats}/>

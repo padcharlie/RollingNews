@@ -9,6 +9,14 @@ export default function ModalLogin() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+const [emailIngresado, setEmailIngresado] = useState('');
+const [passwordIngresada, setPasswordIngresada] = useState('');
+
+const handleSubmit = (e) =>{
+  e.preventDefault();
+  
+}
+
   return (
     <>
       <Button variant="primary" className="m-2" onClick={handleShow}>
@@ -25,7 +33,7 @@ export default function ModalLogin() {
           <Modal.Title>Ingresar</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <Row form>
               <Col md={6}>
                 <FormGroup>
@@ -35,7 +43,8 @@ export default function ModalLogin() {
                     name="email"
                     id="exampleEmail"
                     placeholder="Email"
-                  />
+                  onChange={(e)=>setEmailIngresado(e.target.value)}
+                 />
                 </FormGroup>
               </Col>
               <Col md={6}>
@@ -46,6 +55,7 @@ export default function ModalLogin() {
                     name="password"
                     id="examplePassword"
                     placeholder="*****"
+                    onChange={(e)=>setPasswordIngresada(e.target.value)}
                   />
                 </FormGroup>
               </Col>

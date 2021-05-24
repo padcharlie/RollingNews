@@ -86,7 +86,8 @@ export default function AgregarNoticia(props) {
         setImg2 = "";
         setImgAlt = "";
         setImgAlt2 = "";
-        //AQUI VA LO DE CONSULTAR API
+
+        props.consultarNews();
       } catch (error) {
         console.log(error);
         Swal.fire(" NO agregada", "Error de conexión con el servidor", "error");
