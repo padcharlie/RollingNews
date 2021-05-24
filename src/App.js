@@ -56,7 +56,7 @@ useEffect(() => {
     <Navegacion cats={cats} admin={admin}/>
     <Switch>
       <Route exact path="/" >
-        <Landing />
+        <Landing news={news} />
       </Route>
       <Route exact path="/admin/agregar" >
         <AgregarNoticia news={news} cats={cats} admin={admin} consultarNews={consultarNews} />
