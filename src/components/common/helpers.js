@@ -7,7 +7,7 @@ const campoRequerido = (textoAValidar) =>{
 }
 
 const rangoTexto = (textoAValidar) =>{
-    if (textoAValidar.trim().lenght>200){
+    if (textoAValidar.trim().lenght > 200){
         return false;
     }else{
         return true;

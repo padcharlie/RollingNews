@@ -24,8 +24,9 @@ export default function AgregarNoticia(props) {
   const [img2, setImg2] = useState("");
   const [imgalt, setImgAlt] = useState("");
   const [imgalt2, setImgAlt2] = useState("");
+  const [destacada, setDestacada] = useState(false);
 
-  const URLCat = process.env.REACT_APP_API_URL_CAT;
+
   const URLNews = process.env.REACT_APP_API_URL_NEWS;
 
   const handleCategory = (e) => {
@@ -35,10 +36,20 @@ export default function AgregarNoticia(props) {
     setDate(e.target.value);
   };
 
+  const handleDestacada = () =>
+{
+  if (destacada == false) {
+    setDestacada(true);
+  }else {
+    setDestacada(false);
+  }
+}
+
+console.log("rango texto", rangoTexto(preview));
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (
-      campoRequerido(title) &&
+    if (campoRequerido(title) &&
       campoRequerido(author) &&
       campoRequerido(date) &&
       campoRequerido(preview) &&
@@ -58,6 +69,7 @@ export default function AgregarNoticia(props) {
         imgalt,
         img2,
         imgalt2,
+        destacada
       };
       try {
         const response = await fetch(URLNews, {
@@ -77,25 +89,16 @@ export default function AgregarNoticia(props) {
           );
         }
         e.target.reset();
-        setTitle = "";
-        setCategory = "";
-        setAuthor = "";
-        setDate = "";
-        setPreview = "";
-        setDetail = "";
-        setImg = "";
-        setImg2 = "";
-        setImgAlt = "";
-        setImgAlt2 = "";
-
         props.consultarNews();
       } catch (error) {
         console.log(error);
         Swal.fire(" NO agregada", "Error de conexión con el servidor", "error");
       }
     } else {
-      Swal.fire("Oh no!", "Quedan campos por completar", "error");
+      Swal.fire("Oh no!", "Quedan campos por completar correctamente", "error");
     }
+    console.log(destacada)
+
   };
 
   const history = useHistory();
@@ -108,6 +111,7 @@ export default function AgregarNoticia(props) {
         allowOutsideClick: false,
       }).then(history.push("/"))
  }};
+
 
 
   return (
@@ -132,7 +136,7 @@ export default function AgregarNoticia(props) {
             onChange={(e) => setPreview(e.target.value)}
           />
           <Form.Text id="resumenHelpBlock" muted>
-            El resumen debe tener entre 1 y 200 caracteres. Ha escrito{" "}
+            El resumen debe tener entre 1 y 200 caracteres. Ha escrito {" "}
             {preview.length} caracteres.
           </Form.Text>
         </Form.Group>
@@ -207,9 +211,13 @@ export default function AgregarNoticia(props) {
           </Form.Group>
           <Form.Group as={Col}>
             <Form.Label>Fecha</Form.Label>
-            <Form.Control type="date" onClick={handleDate} />
+            <Form.Control type="date" onSelect={handleDate} />
           </Form.Group>
         </Form.Row>
+        <Form.Group controlId="formBasicCheckbox">
+    <Form.Check type="checkbox" label="Noticia destacada" onClick={handleDestacada} />
+  </Form.Group>
+
         <div class="d-flex justify-content-center">
           <Button
             type="submit"

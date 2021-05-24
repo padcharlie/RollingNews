@@ -10,6 +10,7 @@ import Error404 from './components/pages/Error404';
 import { useEffect, useState } from 'react';
 import Detalle from './components/pages/Detalle';
 import AgregarNoticia from './components/pages/AgregarNoticia';
+import AdminNoticias from './components/pages/AdminNoticias';
 
 function App() {
 
@@ -60,6 +61,9 @@ useEffect(() => {
       <Route exact path="/admin/agregar" >
         <AgregarNoticia news={news} cats={cats} admin={admin} consultarNews={consultarNews} />
       </Route>
+      <Route exact path="/admin/noticias" >
+        <AdminNoticias news={news} cats={cats} admin={admin} consultarNews={consultarNews} />
+      </Route>
       <Route exact path="/categorias/:name" > 
         <Categoria news={news} cats={cats}/>
       </Route>
@@ -70,7 +74,6 @@ useEffect(() => {
         <Error404/>
       </Route>
     </Switch>
-    
     <Pie/>
   </Router>
    

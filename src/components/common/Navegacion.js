@@ -23,12 +23,12 @@ export default function Navegacion(props) {
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
       <NavLink exact={true} to='/' className="nav-link">Inicio</NavLink>
-      {props.cats.map((c)=>(<NavLink exact={true} to={"/categorias/"+c.name} className="nav-link">{c.name}</NavLink>))}
-      <NavDropdown title="Más" id="basic-nav-dropdown">
-        <NavDropdown.Item><NavLink exact={true} to='/categorias' className="nav-link">Política</NavLink></NavDropdown.Item>
-        <NavDropdown.Item><NavLink exact={true} to='/categorias' className="nav-link">Economía</NavLink></NavDropdown.Item>
-        <NavDropdown.Item><NavLink exact={true} to='/categorias' className="nav-link">Salud</NavLink></NavDropdown.Item>
-        <NavDropdown.Item><NavLink exact={true} to='/categorias' className="nav-link">Fotografía</NavLink></NavDropdown.Item>
+      <NavLink exact={true} to={"/categorias/"+"Actualidad"} className="nav-link">Actualidad</NavLink>
+      <NavLink exact={true} to={"/categorias/"+"Tecnologia"} className="nav-link">Tecnología</NavLink>
+      <NavLink exact={true} to={"/categorias/"+"Deportes"} className="nav-link">Deportes</NavLink>
+      <NavLink exact={true} to={"/categorias/"+"Espectaculos"} className="nav-link">Espectáculos</NavLink>
+      <NavDropdown title="Todas las categorías" id="basic-nav-dropdown">
+      {props.cats.map((c)=>(<NavDropdown.Item><NavLink exact={true} to={"/categorias/"+c.name} className="nav-link">{c.name}</NavLink></NavDropdown.Item>))}
         <NavDropdown.Divider />
       </NavDropdown>
       </Nav>

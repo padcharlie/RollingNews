@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { useParams } from "react-router";
-import Noticias from "./Noticias";
+import NoticiasCategorias from "./NoticiasCategorias";
 
 export default function Categoria(props) {
   const params = useParams();
@@ -10,7 +10,7 @@ const notisOrden = noticias.reverse();
 
 const  mostrarNoticias =
     (noticias.length > 0) ? (
-      notisOrden.map((n) => <Noticias new={n} key={n.id} />)
+      notisOrden.map((n) => <NoticiasCategorias new={n} key={n.id} />)
     ) : (
       <p>Lo sentimos, aún no tenemos nada que decir respecto a {params.name}</p>
     );

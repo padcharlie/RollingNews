@@ -5,11 +5,11 @@
       "id": 1
     },
     {
-      "name": "Espectáculos",
+      "name": "Espectaculos",
       "id": 2
     },
     {
-      "name": "Tecnología",
+      "name": "Tecnologia",
       "id": 3
     },
     {
@@ -46,19 +46,6 @@
       "img2": "",
       "imgalt2": "texto de la imagen 2",
       "id": 1
-    },
-    {
-      "title": "Noticia2",
-      "category": "Actualidad",
-      "author": "juanperez",
-      "date": "23/04/2021",
-      "preview": "descripción breve de la noticia que voy a contar, 240 caracteres máximo, como si fuera un tuit. relleno hasta que tenga 240 caracteres para ver como queda de máximo y poder acomodar a eso. vamos parecen mucho 240 caracteres esto se hace muy largo y si lo dejamos en 200 caracteres",
-      "detail": "acá viene la noticia larga con toda la parrrafada. y sigue     y veamos si los enteres salen bien. y que pasa y por que pasa y como pasa y esas cosas importantes de las noticias. estaría muy guay poder ver si podemos hacer editable el cuadro de ingresar noticia para que se pueda subrayar o hacer negrita o cursiva, seria una pagina genial, hasta la pondría en ventaotro punto y a parte para ver como funcionay para que la descripcion breve no sea mas larga que la noticia en si,que por cierto al final os quedamos con 200 caracteres máximos de descripcion breve cosa que sea un tuit y la url a nuestra pagina lorem lorem lorem lore lore loreeeiiiii sabes que estoy a tus pieeeeeeeees tarara tarara quiero vivir la vida lo que me queda contigo tarara tarara ",
-      "img": "https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_960_720.jpg",
-      "imgalt": "Texto de la imagen 1",
-      "img2": "",
-      "imgalt2": "texto de la imagen 2",
-      "id": 2
     },
     {
       "title": "Noticia3",
@@ -248,11 +235,11 @@
       "date": "2021-05-05",
       "preview": "ghjkl",
       "detail": "fghjkyguh",
-      "category": "Espectáculos",
+      "category": "Espectaculos",
       "img": "yghuijo",
       "imgalt": "gyhuji",
       "img2": "yghuji",
-      "imgalt2": "",
+      "imgalt2": "Tecnologia",
       "id": 17
     },
     {
@@ -261,25 +248,12 @@
       "date": "2021-05-05",
       "preview": "ghjkl",
       "detail": "fghjkyguh",
-      "category": "Espectáculos",
+      "category": "Espectaculos",
       "img": "yghuijo",
       "imgalt": "gyhuji",
       "img2": "yghuji",
-      "imgalt2": "",
+      "imgalt2": "Tecnologia",
       "id": 18
-    },
-    {
-      "title": "Noticia Urgente",
-      "author": "carla",
-      "date": "2021-05-20",
-      "preview": "ha pasado algo muy mucho importante",
-      "detail": "esto ha sido tragico, grave, gravisimo, pero es solo lorem dramatico lorem lorem loreeeeeeeeeeeeee ipsium\nsadjajidjaiofsa\nsdkoad \ndatos datos tadotsn\nnoticia importante",
-      "category": "Espectáculos",
-      "img": "https://cdn.pixabay.com/photo/2017/06/24/23/51/autumn-2439241_960_720.jpg",
-      "imgalt": "Foto de calle cubierta de hojas de otoño",
-      "img2": "",
-      "imgalt2": "",
-      "id": 19
     }
   ],
   "admin": [
