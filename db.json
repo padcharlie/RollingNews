@@ -267,6 +267,19 @@
       "img2": "yghuji",
       "imgalt2": "",
       "id": 18
+    },
+    {
+      "title": "Noticia Urgente",
+      "author": "carla",
+      "date": "2021-05-20",
+      "preview": "ha pasado algo muy mucho importante",
+      "detail": "esto ha sido tragico, grave, gravisimo, pero es solo lorem dramatico lorem lorem loreeeeeeeeeeeeee ipsium\nsadjajidjaiofsa\nsdkoad \ndatos datos tadotsn\nnoticia importante",
+      "category": "Espectáculos",
+      "img": "https://cdn.pixabay.com/photo/2017/06/24/23/51/autumn-2439241_960_720.jpg",
+      "imgalt": "Foto de calle cubierta de hojas de otoño",
+      "img2": "",
+      "imgalt2": "",
+      "id": 19
     }
   ],
   "admin": [

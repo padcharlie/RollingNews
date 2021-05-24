@@ -7,6 +7,7 @@ import {
   Dropdown,
   DropdownButton,
 } from "react-bootstrap";
+import { useHistory } from "react-router";
 import { FormGroup, Label, Input } from "reactstrap";
 import Swal from "sweetalert2";
 import { campoRequerido, rangoTexto } from "../common/helpers";
@@ -97,8 +98,21 @@ export default function AgregarNoticia(props) {
     }
   };
 
+  const history = useHistory();
+
+  const bloquearPagina = ()=>{
+    if (props.admin === false){Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "¡Debe ser admin para ingresar!",
+        allowOutsideClick: false,
+      }).then(history.push("/"))
+ }};
+
+
   return (
     <Container>
+      {bloquearPagina()}
       <h2>Agregar Noticias</h2>
       <Form onSubmit={handleSubmit}>
         <Form.Group>
