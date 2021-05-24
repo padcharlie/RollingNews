@@ -7,13 +7,13 @@ export default function Landing(props) {
     <Fragment>
     <Bannersuperior/>
     <Carrusel  news={props.news}/>
-    <container className="d-flex my-2 justify-content-center" >
-    <img className="my-2 mx-auto"  src={process.env.PUBLIC_URL + "/images/covid1.png"} alt="Quédese en casa. Rolling news le da las noticias" />
+    <container className="d-flex w-75 my-2 mx-auto" >
+    <img className="img-fluid"  src={process.env.PUBLIC_URL + "/images/covid1.png"} alt="Quédese en casa. Rolling news le da las noticias" />
     </container>
-    <container className="d-flex my-2 justify-content-center" >
-    <img className="my-2 mx-auto"  src={process.env.PUBLIC_URL + "/images/covid2.png"} alt="Quédese en casa. Rolling news le da las noticias" />
-    </container><container className="d-flex my-2 justify-content-center" >
-    <img className="my-2 mx-auto"  src={process.env.PUBLIC_URL + "/images/covid3.png"} alt="Quédese en casa. Rolling news le da las noticias" />
+    <container className="d-flex w-75 my-2 mx-auto" >
+    <img className="img-fluid"  src={process.env.PUBLIC_URL + "/images/covid2.png"} alt="Quédese en casa. Rolling news le da las noticias" />
+    </container><container className="d-flex w-75 my-2 mx-auto" >
+    <img className="img-fluid"  src={process.env.PUBLIC_URL + "/images/covid3.png"} alt="Quédese en casa. Rolling news le da las noticias" />
     </container>
     </Fragment>
     )
