@@ -1,28 +1,30 @@
+import svgIcons from './svgIcons'
+
 const iconsMap = {
-    '01d': '☀',
-    '02d': '🌤️',
-    '03d': '🌥️',
-    '04d': '☁',
-    '09d': '🌦',
-    '10d': '🌧',
-    '11d': '⛈',
-    '13d': '❄️',
-    '50d': '🌫️',
-    '01n': '🌙',
-    '02n': '🌤️',
-    '03n': '🌥️',
-    '04n': '☁',
-    '09n': '🌦',
-    '10n': '🌧',
-    '11n': '⛈',
-    '13n': '❄️',
-    '50n': '🌫️',
+  '01d': svgIcons.sunny,
+  '02d': svgIcons.cloudy,
+  '03d': svgIcons.cloudy,
+  '04d': svgIcons.cloudy,
+  '09d': svgIcons.showers,
+  '10d': svgIcons.rain,
+  '11d': svgIcons.thunderstorms,
+  '13d': svgIcons.windySnow,
+  '50d': svgIcons.fog,
+  '01n': svgIcons.sunny,
+  '02n': svgIcons.cloudy,
+  '03n': svgIcons.cloudy,
+  '04n': svgIcons.cloudy,
+  '09n': svgIcons.showers,
+  '10n': svgIcons.rain,
+  '11n': svgIcons.thunderstorms,
+  '13n': svgIcons.windySnow,
+  '50n': svgIcons.fog
   };
   
   export const getIcon = name => {
     if (iconsMap[name]) {
       return iconsMap[name];
     }
-    return '☀';
+    return svgIcons.sunny;
   };
   
