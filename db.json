@@ -162,33 +162,7 @@
       "imgalt": "imagen falsa",
       "img2": "",
       "imgalt2": "",
-      "id": 11
-    },
-    {
-      "title": "Noticia 5",
-      "author": "dfghj",
-      "date": "2021-05-12",
-      "preview": "resumen",
-      "detail": "detalle de la noticia",
-      "category": "Tecnología",
-      "img": "urldfgh",
-      "imgalt": "imagen falsa",
-      "img2": "",
-      "imgalt2": "",
       "id": 12
-    },
-    {
-      "title": "Noticia 5",
-      "author": "dfghj",
-      "date": "2021-05-12",
-      "preview": "resumen",
-      "detail": "detalle de la noticia",
-      "category": "Tecnología",
-      "img": "urldfgh",
-      "imgalt": "imagen falsa",
-      "img2": "",
-      "imgalt2": "",
-      "id": 13
     },
     {
       "title": "Noticia 5",
@@ -214,46 +188,7 @@
       "imgalt": "imagen falsa",
       "img2": "",
       "imgalt2": "",
-      "id": 15
-    },
-    {
-      "title": "Noticia 5",
-      "author": "dfghj",
-      "date": "2021-05-12",
-      "preview": "resumen",
-      "detail": "detalle de la noticia",
-      "category": "Tecnología",
-      "img": "urldfgh",
-      "imgalt": "imagen falsa",
-      "img2": "",
-      "imgalt2": "",
       "id": 16
-    },
-    {
-      "title": "tfgyuhij",
-      "author": "ghjk",
-      "date": "2021-05-05",
-      "preview": "ghjkl",
-      "detail": "fghjkyguh",
-      "category": "Espectaculos",
-      "img": "yghuijo",
-      "imgalt": "gyhuji",
-      "img2": "yghuji",
-      "imgalt2": "Tecnologia",
-      "id": 17
-    },
-    {
-      "title": "tfgyuhij",
-      "author": "ghjk",
-      "date": "2021-05-05",
-      "preview": "ghjkl",
-      "detail": "fghjkyguh",
-      "category": "Espectaculos",
-      "img": "yghuijo",
-      "imgalt": "gyhuji",
-      "img2": "yghuji",
-      "imgalt2": "Tecnologia",
-      "id": 18
     }
   ],
   "admin": [

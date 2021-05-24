@@ -9,7 +9,6 @@ export default function Noticias(props) {
   const URLNEWS = process.env.REACT_APP_API_URL_NEWS;
 
   const borrarNoticia = (id) => {
-    console.log("ya has hecho click")
     Swal.fire({
       title: "¿Quiere eliminar la noticia?",
       text: "No puede recuperar una noticia que fue eliminada",
@@ -38,7 +37,7 @@ export default function Noticias(props) {
           } else {
             Swal.fire("Error", "La noticia no pudo ser eliminada", "warning");
           }
-         props.consultarNews();
+          props.consultarNews();
         } catch (error) {
           console.log(error);
           Swal.fire("Error", "La noticia no pudo ser eliminada", "warning");
@@ -60,11 +59,8 @@ export default function Noticias(props) {
         >
           <FontAwesomeIcon icon={faPencilAlt}></FontAwesomeIcon>
         </Link>
-        <Button variant="danger">
-          <FontAwesomeIcon
-            icon={faTrash}
-            onClick={() => borrarNoticia(props.new.id)}
-          ></FontAwesomeIcon>
+        <Button variant="danger" onClick={() => borrarNoticia(props.new.id)}>
+          <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon>
         </Button>
       </div>
     </Container>
