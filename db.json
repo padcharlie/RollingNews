@@ -1,10 +1,6 @@
 {
   "categories": [
     {
-      "name": "Actualidad",
-      "id": 1
-    },
-    {
       "name": "Espectaculos",
       "id": 2
     },
@@ -31,6 +27,14 @@
     {
       "name": "Fotografía",
       "id": 8
+    },
+    {
+      "name": "Cine",
+      "id": 9
+    },
+    {
+      "name": "Actualidad",
+      "id": 10
     }
   ],
   "news": [

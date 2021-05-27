@@ -1,5 +1,5 @@
 import React from 'react'
-import {  Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import {  ButtonGroup, Nav, Navbar, NavDropdown } from 'react-bootstrap'
 import { Link, NavLink } from 'react-router-dom'
 import ModalSuscripcion from './ModalSuscripcion'
 import ModalLogin from './ModalLogin'
@@ -11,8 +11,11 @@ export default function Navegacion(props) {
 
   const mostrarAdmin = ()=>{
     if(props.admin === true){
-      return(
-      <Button className="btn m-2 btn-light"><Link style={{ textDecoration: 'none'}} to='/admin/agregar'><FontAwesomeIcon icon={faPlus}/></Link></Button>
+      return(<ButtonGroup>
+      <Button className="btn m-2 btn-light"><Link style={{ textDecoration: 'none'}} to='/admin/noticias'>Administrar noticias</Link></Button>
+      
+      <Button className="btn m-2 btn-light"><Link style={{ textDecoration: 'none'}} to='/admin/categorias'>Administrar categorias</Link></Button>
+      </ButtonGroup>
       )
     }
   }
