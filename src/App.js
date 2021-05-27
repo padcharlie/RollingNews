@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react';
 import Detalle from './components/pages/Detalle';
 import AgregarNoticia from './components/pages/AgregarNoticia';
 import AdminNoticias from './components/pages/AdminNoticias';
+import EditarNoticias from './components/pages/EditarNoticias';
 
 function App() {
 
@@ -63,6 +64,9 @@ useEffect(() => {
       </Route>
       <Route exact path="/admin/noticias" >
         <AdminNoticias news={news} cats={cats} admin={admin} consultarNews={consultarNews} />
+      </Route>
+      <Route exact path="/admin/editar/:id" >
+        <EditarNoticias news={news} cats={cats} admin={admin} consultarNews={consultarNews} />
       </Route>
       <Route exact path="/categorias/:name" > 
         <Categoria news={news} cats={cats}/>
