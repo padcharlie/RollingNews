@@ -4,8 +4,6 @@ import { Link, NavLink } from 'react-router-dom'
 import ModalSuscripcion from './ModalSuscripcion'
 import ModalLogin from './ModalLogin'
 import { Button } from 'react-bootstrap'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function Navegacion(props) {
 
@@ -31,7 +29,7 @@ export default function Navegacion(props) {
       <NavLink exact={true} to={"/categorias/"+"Deportes"} className="nav-link">Deportes</NavLink>
       <NavLink exact={true} to={"/categorias/"+"Espectaculos"} className="nav-link">Espectáculos</NavLink>
       <NavDropdown title="Todas las categorías" id="basic-nav-dropdown">
-      {props.cats.map((c)=>(<NavDropdown.Item><NavLink exact={true} to={"/categorias/"+c.name} className="nav-link">{c.name}</NavLink></NavDropdown.Item>))}
+      {props.cats.map((c)=>(<NavDropdown.Item key={c.id}><NavLink exact={true} to={"/categorias/"+c.name} className="nav-link">{c.name}</NavLink></NavDropdown.Item>))}
         <NavDropdown.Divider />
       </NavDropdown>
       </Nav>

@@ -48,7 +48,7 @@ export default function EditarNoticias(props) {
     
       const handleDestacada = () =>
     {
-      if (destacada == false) {
+      if (destacada === false) {
         setDestacada(true);
       }else {
         setDestacada(false);

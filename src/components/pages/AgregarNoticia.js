@@ -36,7 +36,7 @@ export default function AgregarNoticia(props) {
 
   const handleDestacada = () =>
 {
-  if (destacada == false) {
+  if (destacada === false) {
     setDestacada(true);
   }else {
     setDestacada(false);
