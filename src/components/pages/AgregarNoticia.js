@@ -3,9 +3,7 @@ import {
   Col,
   Container,
   Form,
-  Button,
-  Dropdown,
-  DropdownButton,
+  Button
 } from "react-bootstrap";
 import { useHistory } from "react-router";
 import { FormGroup, Label, Input } from "reactstrap";
@@ -97,7 +95,6 @@ console.log("rango texto", rangoTexto(preview));
     } else {
       Swal.fire("Oh no!", "Quedan campos por completar correctamente", "error");
     }
-    console.log(destacada)
 
   };
 
