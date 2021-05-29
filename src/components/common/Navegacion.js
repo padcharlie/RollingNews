@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, ButtonGroup, Nav, Navbar, NavDropdown } from "react-bootstrap";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useHistory } from "react-router-dom";
 import ModalSuscripcion from "./ModalSuscripcion";
 import ModalLogin from "./ModalLogin";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -19,9 +19,11 @@ export default function Navegacion(props) {
     JSON.parse(localStorage.getItem("loggedAdmin"))
   );
 
+  const history = useHistory()
   const cerrarSesion = () => {
     localStorage.setItem("loggedAdmin", JSON.stringify(""));
     setLoggedAdmin("");
+    history.push("/")
   };
 
   const mostrarAdmin = () => {
@@ -40,8 +42,7 @@ export default function Navegacion(props) {
             </Link>
           </Button>
           <Button onClick={cerrarSesion}>
-            {" "}
-            <FontAwesomeIcon icon={faSignOutAlt}></FontAwesomeIcon>{" "}
+            <FontAwesomeIcon icon={faSignOutAlt}></FontAwesomeIcon>
           </Button>
         </ButtonGroup>
       );
@@ -56,6 +57,7 @@ export default function Navegacion(props) {
             admins={props.admins}
             consultarAdmin={props.consultarAdmin}
             mostrarAdmin={mostrarAdmin}
+            mostarNoAdmin={mostrarNoAdmin}
           />
         </ButtonGroup>
       );
@@ -65,7 +67,7 @@ export default function Navegacion(props) {
   useEffect(() => {
     mostrarAdmin();
     mostrarNoAdmin();
-  });
+  },[]);
 
   return (
     <Navbar bg="light" expand="lg">

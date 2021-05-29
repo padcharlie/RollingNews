@@ -21,7 +21,9 @@ export default function EditarNoticias(props) {
     const [destacada, setDestacada] = useState(false);
     const {id}=useParams();
     const history = useHistory();
-
+    const [loggedAdmin, setLoggedAdmin] = useState(
+      JSON.parse(localStorage.getItem("loggedAdmin"))
+    );
     
     const consultarNoticia = async() =>{
         try {
@@ -97,7 +99,7 @@ export default function EditarNoticias(props) {
       }
 
   const bloquearPagina = ()=>{
-    if (props.admin === false){Swal.fire({
+    if (loggedAdmin === ""){Swal.fire({
         icon: "error",
         title: "Oops...",
         text: "¡Debe ser admin para ingresar!",

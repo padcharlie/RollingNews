@@ -31,17 +31,22 @@ export default function ModalLogin(props) {
         props.admins.find((admins) => admins.email === emailIngresado) &&
           props.admins.find((admins) => admins.password === passwordIngresada)
       );
-      const logged = props.admins[_user].name;
-      setLoggedAdmin(logged);
-      localStorage.setItem("loggedAdmin", JSON.stringify(logged));
-
+     
+      setLoggedAdmin(props.admins[_user].name);
+      localStorage.setItem("loggedAdmin", JSON.stringify(props.admins[_user].name));
       setShow(false);
       props.mostrarAdmin();
+
       history.push("/admin");
     } else {
       alert("El email o la contraseña ingresados son incorrectos");
     }
   };
+ 
+  useEffect(() => {
+    props.mostrarAdmin();
+  },[]);
+
 
   return (
     <>
