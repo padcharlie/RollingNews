@@ -16,7 +16,7 @@ export default function BannerCotizacion() {
   }
     }
    
-    console.log()
+    console.log(dolar)
 
   useEffect(() => {
     consultarAPICoti();
@@ -24,6 +24,7 @@ export default function BannerCotizacion() {
 
   return (
     <div>
+      {(dolar[0]?.casa.compra)}
     </div>
   );
 }

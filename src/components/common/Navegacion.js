@@ -56,6 +56,7 @@ export default function Navegacion(props) {
           <ModalLogin
             admins={props.admins}
             consultarAdmin={props.consultarAdmin}
+            setLoggedAdmin={setLoggedAdmin}
             mostrarAdmin={mostrarAdmin}
             mostarNoAdmin={mostrarNoAdmin}
           />

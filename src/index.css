@@ -17,6 +17,6 @@ code {
   border-color: #40BF9D;
  };
  .carousel-bg{
- background-color: #00000067;
+ background-color: #00000067 !important;
 
 }
