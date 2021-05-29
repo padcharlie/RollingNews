@@ -12,10 +12,7 @@ export default function ModalLogin(props) {
 
   const [emailIngresado, setEmailIngresado] = useState("");
   const [passwordIngresada, setPasswordIngresada] = useState("");
-  const [loggedAdmin, setLoggedAdmin] = useState(
-    JSON.parse(localStorage.getItem("loggedAdmin"))
-  );
-
+  
   const history = useHistory();
   
   const handleSubmit = (e) => {
@@ -32,7 +29,7 @@ export default function ModalLogin(props) {
           props.admins.find((admins) => admins.password === passwordIngresada)
       );
      
-      setLoggedAdmin(props.admins[_user].name);
+      props.setLoggedAdmin(props.admins[_user].name);
       localStorage.setItem("loggedAdmin", JSON.stringify(props.admins[_user].name));
       setShow(false);
       props.mostrarAdmin();

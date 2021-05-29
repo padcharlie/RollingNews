@@ -20,6 +20,7 @@ export default function EditarNoticias(props) {
     const [date, setDate] = useState('');
     const [destacada, setDestacada] = useState(false);
     const {id}=useParams();
+    const [previewCounter,setPreviewCounter] = useState("")
     const history = useHistory();
     const [loggedAdmin, setLoggedAdmin] = useState(
       JSON.parse(localStorage.getItem("loggedAdmin"))
@@ -130,11 +131,12 @@ export default function EditarNoticias(props) {
               id="resumen"
               aria-describedby="resumenHelpBlock"
               defaultValue={noticia.preview}
+              onChange={(e)=>setPreviewCounter(e.target.value)}
               ref={resumenRef}
             />
             <Form.Text id="resumenHelpBlock" muted>
-              El resumen debe tener entre 1 y 200 caracteres. Ha escrito {" "}
-               caracteres.
+    El resumen debe tener entre 1 y 100 caracteres.  .Total de caracteres tras la modificación: {previewCounter.length} 
+    {" "}caracteres. <i>(Si no hay modificaciones el contador marcará 0)</i>
             </Form.Text>
           </Form.Group>
           <Form.Group>

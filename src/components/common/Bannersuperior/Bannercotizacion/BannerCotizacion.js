@@ -12,23 +12,22 @@ export default function BannerCotizacion() {
     const respuesta = await fetch("https://www.dolarsi.com/api/api.php?type=valoresprincipales")
     const cotizaciones = await respuesta.json()
    setDolar(cotizaciones)
+   console.log("dolar",cotizaciones)
    setCargando(false);
   }catch (error){
     console.log(error)
   }
     }
    
-    console.log()
+    console.log(dolar)
 
   useEffect(() => {
     consultarAPICoti();
   }, []);
 
-  const mostrarComponente = (cargando === true )? (<Spinner animation="border" size="sm"></Spinner>) : (dolar && <InfoCoti dolar={dolar}></InfoCoti>);
   return (
     <div>
-      {mostrarComponente}
-      
+      {(dolar[0]?.casa.compra)}
     </div>
   );
 }
