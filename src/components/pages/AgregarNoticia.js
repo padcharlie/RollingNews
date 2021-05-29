@@ -19,11 +19,14 @@ export default function AgregarNoticia(props) {
   const [preview, setPreview] = useState("");
   const [detail, setDetail] = useState("");
   const [img, setImg] = useState("");
-  const [img2, setImg2] = useState("");
+  const  [img2, setImg2] = useState("");
   const [imgalt, setImgAlt] = useState("");
   const [imgalt2, setImgAlt2] = useState("");
   const [destacada, setDestacada] = useState(false);
 
+  const [loggedAdmin, setLoggedAdmin] = useState(
+    JSON.parse(localStorage.getItem("loggedAdmin"))
+  );
 
   const URLNews = process.env.REACT_APP_API_URL_NEWS;
 
@@ -99,9 +102,9 @@ console.log("rango texto", rangoTexto(preview));
   };
 
   const history = useHistory();
-
+ 
   const bloquearPagina = ()=>{
-    if (props.admin === false){Swal.fire({
+    if (loggedAdmin === ""){Swal.fire({
         icon: "error",
         title: "Oops...",
         text: "¡Debe ser admin para ingresar!",

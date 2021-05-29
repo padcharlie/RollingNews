@@ -4,10 +4,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faTrash } from "@fortawesome/free-solid-svg-icons";
 import { campoRequerido } from "../common/helpers"
 import Swal from 'sweetalert2';
+import { useHistory } from 'react-router-dom';
+
 export default function AdminCategorias(props) {
 
     const [name, setName]=useState("");
     const URLCats = process.env.REACT_APP_API_URL_CAT; 
+    const history = useHistory();
+    const [loggedAdmin, setLoggedAdmin] = useState(
+      JSON.parse(localStorage.getItem("loggedAdmin"))
+    );
+    const bloquearPagina = ()=>{
+      if (loggedAdmin === ""){Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "¡Debe ser admin para ingresar!",
+          allowOutsideClick: false,
+        }).then(history.push("/"))
+   }};
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -89,6 +103,7 @@ export default function AdminCategorias(props) {
 
     return (
         <div className="container mx-5">
+          {bloquearPagina()}
             <h1 className="text-center my-3">Administrar categorías</h1>
             <h3>Añadir Categorías</h3>
             <div className="d-inline mt-3">
