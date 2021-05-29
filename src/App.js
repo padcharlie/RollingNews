@@ -13,15 +13,17 @@ import AgregarNoticia from './components/pages/AgregarNoticia';
 import AdminNoticias from './components/pages/AdminNoticias';
 import EditarNoticias from './components/pages/EditarNoticias';
 import AdminCategorias from './components/pages/AdminCategorias';
+import AdminPage from './components/pages/AdminPage';
 
 function App() {
 
 const URLCAT = process.env.REACT_APP_API_URL_CAT;
 const URLNEWS = process.env.REACT_APP_API_URL_NEWS;
+const URLAD = process.env.REACT_APP_API_URL_ADMIN;
 
 const [news,setNews]=useState([]);
 const [cats,setCats]=useState([]);
-const [admin,setAdmin]=useState(true);
+const [admins,setAdmins]=useState([]);
 
 const consultarNews = async()=>{
     try {
@@ -34,6 +36,18 @@ const consultarNews = async()=>{
       alert("Rolling News no está rodando hoy, toca volver a la edición en papel");
   }
 };
+const consultarAdmins = async()=>{
+  try {
+  const responseadmins = await fetch(URLAD);
+  if (responseadmins.status === 200){
+    setAdmins(await responseadmins.json())
+  };
+  } catch (error) {
+    console.log(error);
+    alert("Rolling News no está pudiendo contactar con los administradores de la web");
+}
+};
+
 
 const consultarCats = async()=>{
   try {
@@ -43,34 +57,41 @@ const consultarCats = async()=>{
   }
   } catch (error) {
     console.log(error)
-    alert("Rolling News solo presenta la opción 'noticias', no hay categorías, están sobrevaloradas");
+    alert("En Rolling News no hay categorías, están sobrevaloradas");
 }
 }    
+
+
+
 useEffect(() => {
  consultarCats();
  consultarNews();
+ consultarAdmins();
 },[])
 
 
   return (
 <Fragment>
   <Router>
-    <Navegacion cats={cats} admin={admin}/>
+    <Navegacion cats={cats} admins={admins} consultarAdmins={consultarAdmins}/>
     <Switch>
       <Route exact path="/" >
         <Landing news={news} />
       </Route>
+      <Route exact path="/admin" >
+        <AdminPage news={news} cats={cats} admins={admins} consultarNews={consultarNews} />
+      </Route>
       <Route exact path="/admin/agregar" >
-        <AgregarNoticia news={news} cats={cats} admin={admin} consultarNews={consultarNews} />
+        <AgregarNoticia news={news} cats={cats} admins={admins} consultarNews={consultarNews} />
       </Route>
       <Route exact path="/admin/noticias" >
-        <AdminNoticias news={news} cats={cats} admin={admin} consultarNews={consultarNews} />
+        <AdminNoticias news={news} cats={cats} admins={admins} consultarNews={consultarNews} />
       </Route>
       <Route exact path="/admin/editar/:id" >
-        <EditarNoticias news={news} cats={cats} admin={admin} consultarNews={consultarNews} />
+        <EditarNoticias news={news} cats={cats} admins={admins} consultarNews={consultarNews} />
       </Route>
       <Route exact path="/admin/categorias" >
-        <AdminCategorias news={news} cats={cats} admin={admin} consultarCats={consultarCats} />
+        <AdminCategorias news={news} cats={cats} admins={admins} consultarCats={consultarCats} />
       </Route>
       <Route exact path="/categorias/:name" > 
         <Categoria news={news} cats={cats}/>
