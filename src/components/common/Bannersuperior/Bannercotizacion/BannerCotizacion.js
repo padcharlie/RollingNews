@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { Spinner } from 'react-bootstrap';
+import InfoCoti from "./InfoCoti";
+
 
 export default function BannerCotizacion() {
   const [dolar, setDolar] = useState([]);
@@ -21,9 +24,11 @@ export default function BannerCotizacion() {
     consultarAPICoti();
   }, []);
 
+  const mostrarComponente = (cargando === true )? (<Spinner animation="border" size="sm"></Spinner>) : (dolar && <InfoCoti dolar={dolar}></InfoCoti>);
   return (
     <div>
-      Dolar (compra) -Oficial: <b>{dolar[0].casa.compra}</b> -Blue: <b>{dolar[1].casa.compra}</b>
+      {mostrarComponente}
+      
     </div>
   );
 }
