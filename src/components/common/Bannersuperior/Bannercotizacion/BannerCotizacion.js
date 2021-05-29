@@ -1,18 +1,29 @@
-import React, { useState , useEffect} from "react";
+import React, { useState, useEffect } from "react";
 
 export default function BannerCotizacion() {
-  const [dolar,setDolar]=useState({})
+  const [dolar, setDolar] = useState([]);
+  const [cargando, setCargando] = useState(false);
   const consultarAPICoti = async () => {
-    const respuesta = await fetch("http://ws.geeklab.com.ar/dolar/get-dolar-json.php");
-   setDolar(await respuesta.json());
-    console.log("cotiz",dolar);
-  };
+    try{ 
+      setCargando(true);
+    const respuesta = await fetch("https://www.dolarsi.com/api/api.php?type=valoresprincipales")
+    const cotizaciones = await respuesta.json()
+   setDolar(cotizaciones)
+   setCargando(false);
+  }catch (error){
+    console.log(error)
+  }
+    }
+   
+    console.log()
 
   useEffect(() => {
-    consultarAPICoti()
-  }, [])
-  return(<div>
-    <b>Dolar:{" "}</b>Oficial: {dolar.libre}{" "} Blue: {dolar.blue}
-  </div>
-     ) ;
+    consultarAPICoti();
+  }, []);
+
+  return (
+    <div>
+      Dolar (compra) -Oficial: <b>{dolar[0].casa.compra}</b> -Blue: <b>{dolar[1].casa.compra}</b>
+    </div>
+  );
 }
