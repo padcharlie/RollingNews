@@ -6,7 +6,7 @@ export default function Carrusel(props) {
 
 
     return (
-        <Carousel className="w-100 mx-auto ">
+        <Carousel className="w-75 mx-auto ">
           {props.news.map((n)=><Carousel.Item key={n.id}>
     <img
       className="w-100"
