@@ -1,18 +1,18 @@
-import React from "react";
+import React, { useState , useEffect} from "react";
 
 export default function BannerCotizacion() {
+  const [dolar,setDolar]=useState({})
   const consultarAPICoti = async () => {
-    const respuesta = await fetch("https://api.estadisticasbcra.com/usd", {
-      mode: "no-cors",
-      headers: {
-        Authorization:
-          "BEARER eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTM2Njc3NzEsInR5cGUiOiJleHRlcm5hbCIsInVzZXIiOiJjYXBhZHVsYXZAZ21haWwuY29tIn0.MX4vQJIgfK7m9vPazg7sNNPeVa3EtrHlupktTXcV_D6T1AXcXPElcXvTEYZzWDccmrrFM4GD9z6It06ivZmU7g",
-      },
-    });
-    const resp = await respuesta;
-    console.log("cotiz", resp);
+    const respuesta = await fetch("http://ws.geeklab.com.ar/dolar/get-dolar-json.php");
+   setDolar(await respuesta.json());
+    console.log("cotiz",dolar);
   };
 
-  consultarAPICoti();
-  return <div></div>;
+  useEffect(() => {
+    consultarAPICoti()
+  }, [])
+  return(<div>
+    <b>Dolar:{" "}</b>Oficial: {dolar.libre}{" "} Blue: {dolar.blue}
+  </div>
+     ) ;
 }
