@@ -3,7 +3,6 @@ import { getIcon } from "./climaEmojis";
 import "./bannerClima.css";
 
 const Datosclima = (props) => {
-  console.log(props, "desde datosclima");
 
   return (
     <div>

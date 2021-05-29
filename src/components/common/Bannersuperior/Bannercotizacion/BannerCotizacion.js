@@ -9,6 +9,7 @@ export default function BannerCotizacion() {
     const respuesta = await fetch("https://www.dolarsi.com/api/api.php?type=valoresprincipales")
     const cotizaciones = await respuesta.json()
    setDolar(cotizaciones)
+   console.log("dolar",cotizaciones)
    setCargando(false);
   }catch (error){
     console.log(error)
@@ -23,7 +24,6 @@ export default function BannerCotizacion() {
 
   return (
     <div>
-      Dolar (compra) -Oficial: <b>{dolar[0].casa.compra}</b> -Blue: <b>{dolar[1].casa.compra}</b>
     </div>
   );
 }

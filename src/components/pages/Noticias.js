@@ -55,7 +55,7 @@ export default function Noticias(props) {
       <div className="mb-2">
         <Link
           className="btn btn-warning mr-2 text-light"
-          to={`admin/editar/${props.new.id}`}
+          to={`/admin/editar/${props.new.id}`}
         >
           <FontAwesomeIcon icon={faPencilAlt}></FontAwesomeIcon>
         </Link>
