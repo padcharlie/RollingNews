@@ -24,7 +24,7 @@ export default function BannerCotizacion() {
 
   return (
     <div>
-      {(dolar[0]?.casa.compra)}
+      Dólar Oficial: <b>{(dolar[0]?.casa.compra)}</b>  - Blue <b>{(dolar[1]?.casa.compra)}</b>
     </div>
   );
 }

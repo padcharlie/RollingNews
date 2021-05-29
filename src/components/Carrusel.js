@@ -1,21 +1,20 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel'
-import '../index.css';
+import { Link } from 'react-router-dom'
 
 export default function Carrusel(props) {
-
+ const destacadas = props.news.filter(n => n.destacada === true)
 
     return (
         <Carousel className="w-75 mx-auto ">
-          {props.news.map((n)=><Carousel.Item key={n.id}>
+          {destacadas.map((n)=><Carousel.Item key={n.id}>
     <img
       className="w-100"
       src={n.img}
-      alt={n.imgalt}
+      alt="First slide"
     />
-    <Carousel.Caption >
-      <h3 className="carousel-bg">{n.title}</h3>
-      <p style={{ backgroundColor: "#00000067"}}>{n.preview}</p>
+    <Carousel.Caption>
+     <Link  to={"/noticias/"+n.title} style={{ textDecoration: 'none' }}> <h3 style={{backgroundColor : "#0000007a", color: "#ffffff"}}>{n.title}</h3></Link>
     </Carousel.Caption>
   </Carousel.Item>) }
   
