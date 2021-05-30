@@ -14,7 +14,7 @@ export default function Carrusel(props) {
       alt="First slide"
     />
     <Carousel.Caption>
-     <Link  to={"/noticias/"+n.title} style={{ textDecoration: 'none' }}> <h3 style={{backgroundColor : "#0000007a", color: "#ffffff"}}>{n.title}</h3></Link>
+     <Link  to={"/noticias/"+n.title} style={{ textDecoration: 'none' }}> <h4 style={{backgroundColor : "#0000007a", color: "#ffffff"}}>{n.title}</h4></Link>
     </Carousel.Caption>
   </Carousel.Item>) }
   
