@@ -31,7 +31,7 @@ export default function AdminCategorias(props) {
 
           const categoriaNueva = {
             name
-          }
+          };
           try {
             const response = await fetch(URLCats,  {
                 method: "POST",
@@ -60,7 +60,7 @@ export default function AdminCategorias(props) {
         }
       };
     
-    const eliminarCategoria= (id) => {
+    const eliminarCategoria= (_id) => {
         Swal.fire({
           title: "¿Desea eliminar la categoría?",
           text: "Eliminar la categoría no elimina todas las noticias pertenecientes a la misma",
@@ -74,7 +74,7 @@ export default function AdminCategorias(props) {
           if (result.isConfirmed) {
             
             try {
-              const respuesta = await fetch(URLCats + "/" + id, {
+              const respuesta = await fetch(URLCats + "/" + _id, {
                 method: "DELETE",
                 headers: {
                   "Content-Type": "application/json",
@@ -120,7 +120,7 @@ export default function AdminCategorias(props) {
             </Form>
 </div>
 <h3>Todas las categorías</h3>
-{props.cats.map((c)=><p>{c.name}<Button className="btn btn-light btn-outline-danger mx-5" onClick={() =>eliminarCategoria(c.id)}><FontAwesomeIcon icon={faTrash}> </FontAwesomeIcon> </Button></p>)}
+{props.cats.map((c)=><p>{c.name}<Button className="btn btn-light btn-outline-danger mx-5" onClick={() =>eliminarCategoria(c._id)}><FontAwesomeIcon icon={faTrash}> </FontAwesomeIcon> </Button></p>)}
         </div>
     )
-}
+};

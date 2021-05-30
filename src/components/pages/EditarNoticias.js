@@ -75,8 +75,8 @@ export default function EditarNoticias(props) {
              categoria,
              destacada
             };
-            console.log(`${URLNEWS}/${noticia.id}`)
-            const respuesta = await fetch(`${URLNEWS}/${noticia.id}`,{
+            console.log(`${URLNEWS}/${noticia._id}`)
+            const respuesta = await fetch(`${URLNEWS}/${noticia._id}`,{
               method: "PUT",
               headers: {"Content-Type": "application/json"},
               body: JSON.stringify(noticiaModificada)
