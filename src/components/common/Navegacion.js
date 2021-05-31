@@ -1,22 +1,19 @@
-<<<<<<< HEAD
-import React {useEffect} from 'react'
+import React, { useEffect, useState } from "react";
 import {  Button, NavDropdown } from 'react-bootstrap'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useHistory } from "react-router-dom";
 import ModalSuscripcion from './ModalSuscripcion'
 import ModalLogin from './ModalLogin'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../common/Navegacion.css'
 import $ from 'jquery'
-=======
-import React, { useEffect, useState } from "react";
-import { Button, ButtonGroup, Nav, Navbar, NavDropdown } from "react-bootstrap";
-import { Link, NavLink, useHistory } from "react-router-dom";
-import ModalSuscripcion from "./ModalSuscripcion";
-import ModalLogin from "./ModalLogin";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
->>>>>>> d2f1a39b7493cfb0280a52588041df6daa7288e3
+
+
+// import { Button, ButtonGroup, Nav, Navbar, NavDropdown } from "react-bootstrap";
+// import ModalSuscripcion from "./ModalSuscripcion";
+// import ModalLogin from "./ModalLogin";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Navegacion(props) {
 
@@ -51,8 +48,7 @@ export default function Navegacion(props) {
           </Button>
         </ButtonGroup>
       );
-    }
-<<<<<<< HEAD
+    
   }
 
   function animation() {
@@ -164,8 +160,7 @@ export default function Navegacion(props) {
   </div>
   </nav>
      )
- }
-=======
+
   };
   const mostrarNoAdmin = () => {
     if (loggedAdmin === "") {
@@ -250,4 +245,4 @@ export default function Navegacion(props) {
     </Navbar>
   );
 }
->>>>>>> d2f1a39b7493cfb0280a52588041df6daa7288e3
+
