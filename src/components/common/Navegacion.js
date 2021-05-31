@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import {  Button, NavDropdown } from 'react-bootstrap'
+import { ButtonGroup, Navbar, Nav, Button, NavDropdown } from 'react-bootstrap'
 import { Link, NavLink, useHistory } from "react-router-dom";
 import ModalSuscripcion from './ModalSuscripcion'
-import ModalLogin from './ModalLogin'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+ import ModalLogin from './ModalLogin'
+ import { faPlus } from '@fortawesome/free-solid-svg-icons'
+ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../common/Navegacion.css'
 import $ from 'jquery'
-import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+ import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
 
 // import { Button, ButtonGroup, Nav, Navbar, NavDropdown } from "react-bootstrap";
@@ -27,6 +27,14 @@ export default function Navegacion(props) {
     setLoggedAdmin("");
     history.push("/")
   };
+
+  const mascategorias = props.cats.filter(
+    (c) =>
+      c.name !== "Actualidad" &&
+      c.name !== "Tecnologia" &&
+      c.name !== "Deportes" &&
+      c.name !== "Espectaculos"
+  );
 
   const mostrarAdmin = () => {
     if (loggedAdmin !== "") {
@@ -82,12 +90,19 @@ export default function Navegacion(props) {
 
 
   useEffect (()=> {
+    mostrarAdmin();
+    mostrarNoAdmin();
     animation();
   $ (window).on ('resize', function (){
     setTimeout(function () { animation
       ();}, 500);
     });
   }, []) ;
+
+  // useEffect(() => {
+  //   mostrarAdmin();
+  //   mostrarNoAdmin();
+  // },[]);
 
     return (
 //         <Navbar bg="light" expand="lg">
@@ -179,10 +194,7 @@ export default function Navegacion(props) {
     }
   };
 
-  useEffect(() => {
-    mostrarAdmin();
-    mostrarNoAdmin();
-  },[]);
+  
 
   return (
     <Navbar bg="light" expand="lg">

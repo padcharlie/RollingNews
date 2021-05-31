@@ -2,6 +2,7 @@ import { Button, Modal } from 'react-bootstrap';
 import { Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
 import React from 'react'
 import { useState } from 'react';
+import emailjs from 'emailjs-com'
 
 export default function ModalSuscripcion() {
 
@@ -9,7 +10,19 @@ export default function ModalSuscripcion() {
       
         const handleClose = () => setShow(false);
         const handleShow = () => setShow(true);
+
+        function sendEmail(e) {
+          e.preventDefault();
       
+          emailjs.sendForm('service_xpq6501', 'template_c05titl', e.target, 'user_VuOzu2MjCeCYYEbY56bbP')
+            .then((result) => {
+                alert('mensaje enviado');
+            }, (error) => {
+                alert('error al enviar el mensaje');
+            });
+            e.target.reset();
+        }
+
         return (
           <>
             <Button variant="primary" className="m-2" onClick={handleShow}>
@@ -26,7 +39,7 @@ export default function ModalSuscripcion() {
                 <Modal.Title>¡Suscríbase a Rolling News!</Modal.Title>
               </Modal.Header>
               <Modal.Body>
-              <Form>
+              <Form onSubmit={sendEmail}>
       <Row form>
         <Col md={6}>
           <FormGroup>
