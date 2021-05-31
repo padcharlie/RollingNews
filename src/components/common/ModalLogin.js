@@ -3,6 +3,7 @@ import { Form, Row, Col, Label, FormGroup, Input } from "reactstrap";
 import { useState, useEffect } from "react";
 //import { Swal } from "sweetalert2";
 import { useHistory } from "react-router-dom";
+import bcryptjs from "bcryptjs";
 
 export default function ModalLogin(props) {
   const [show, setShow] = useState(false);
@@ -21,12 +22,12 @@ export default function ModalLogin(props) {
       (admins) => admins.email === emailIngresado
     );
     const passwordFound = props.admins.find(
-      (admins) => admins.password === passwordIngresada
+      (admins) => bcryptjs.compareSync(passwordIngresada, admins.password)
     );
     if (emailFound && passwordFound) {
       const _user = props.admins.indexOf(
         props.admins.find((admins) => admins.email === emailIngresado) &&
-          props.admins.find((admins) => admins.password === passwordIngresada)
+          props.admins.find((admins) => bcryptjs.compareSync(passwordIngresada, admins.password))
       );
      
       props.setLoggedAdmin(props.admins[_user].name);
