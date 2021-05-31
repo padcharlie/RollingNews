@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.boton{
+  background-color:#40BF9D;
+  color: antiquewhite;
+  border-color: #40BF9D;
+ };
+ .carousel-bg{
+ background-color: #00000067 !important;
+}

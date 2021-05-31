@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 export default function Noticias(props) {
   const URLNEWS = process.env.REACT_APP_API_URL_NEWS;
 
-  const borrarNoticia = (id) => {
+  const borrarNoticia = (_id) => {
     Swal.fire({
       title: "¿Quiere eliminar la noticia?",
       text: "No puede recuperar una noticia que fue eliminada",
@@ -21,7 +21,7 @@ export default function Noticias(props) {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const URL = URLNEWS + "/" + id;
+          const URL = URLNEWS + "/" + _id;
           const respuesta = await fetch(URL, {
             method: "DELETE",
             headers: {
@@ -55,11 +55,11 @@ export default function Noticias(props) {
       <div className="mb-2">
         <Link
           className="btn btn-warning mr-2 text-light"
-          to={`admin/editar/${props.new.id}`}
+          to={`/admin/editar/${props.new._id}`}
         >
           <FontAwesomeIcon icon={faPencilAlt}></FontAwesomeIcon>
         </Link>
-        <Button variant="danger" onClick={() => borrarNoticia(props.new.id)}>
+        <Button variant="danger" onClick={() => borrarNoticia(props.new._id)}>
           <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon>
         </Button>
       </div>

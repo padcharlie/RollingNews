@@ -1,21 +1,50 @@
 import { Button, Modal } from "react-bootstrap";
 import { Form, Row, Col, Label, FormGroup, Input } from "reactstrap";
-import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+//import { Swal } from "sweetalert2";
+import { useHistory } from "react-router-dom";
+import bcryptjs from "bcryptjs";
 
-export default function ModalLogin() {
+export default function ModalLogin(props) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-const [emailIngresado, setEmailIngresado] = useState('');
-const [passwordIngresada, setPasswordIngresada] = useState('');
-
-const handleSubmit = (e) =>{
-  e.preventDefault();
+  const [emailIngresado, setEmailIngresado] = useState("");
+  const [passwordIngresada, setPasswordIngresada] = useState("");
   
-}
+  const history = useHistory();
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const emailFound = props.admins.find(
+      (admins) => admins.email === emailIngresado
+    );
+    const passwordFound = props.admins.find(
+      (admins) => bcryptjs.compareSync(passwordIngresada, admins.password)
+    );
+    if (emailFound && passwordFound) {
+      const _user = props.admins.indexOf(
+        props.admins.find((admins) => admins.email === emailIngresado) &&
+          props.admins.find((admins) => bcryptjs.compareSync(passwordIngresada, admins.password))
+      );
+     
+      props.setLoggedAdmin(props.admins[_user].name);
+      localStorage.setItem("loggedAdmin", JSON.stringify(props.admins[_user].name));
+      setShow(false);
+      props.mostrarAdmin();
+
+      history.push("/admin");
+    } else {
+      alert("El email o la contraseña ingresados son incorrectos");
+    }
+  };
+ 
+  useEffect(() => {
+    props.mostrarAdmin();
+  },[]);
+
 
   return (
     <>
@@ -43,8 +72,8 @@ const handleSubmit = (e) =>{
                     name="email"
                     id="exampleEmail"
                     placeholder="Email"
-                  onChange={(e)=>setEmailIngresado(e.target.value)}
-                 />
+                    onChange={(e) => setEmailIngresado(e.target.value)}
+                  />
                 </FormGroup>
               </Col>
               <Col md={6}>
@@ -55,12 +84,12 @@ const handleSubmit = (e) =>{
                     name="password"
                     id="examplePassword"
                     placeholder="*****"
-                    onChange={(e)=>setPasswordIngresada(e.target.value)}
+                    onChange={(e) => setPasswordIngresada(e.target.value)}
                   />
                 </FormGroup>
               </Col>
             </Row>
-            <Button>Sign in</Button>
+            <Button type="submit">Sign in</Button>
           </Form>
         </Modal.Body>
         <Modal.Footer>

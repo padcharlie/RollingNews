@@ -10,7 +10,7 @@ const notisOrden = noticias.reverse();
 
 const  mostrarNoticias =
     (noticias.length > 0) ? (
-      notisOrden.map((n) => <NoticiasCategorias new={n} key={n.id} />)
+      notisOrden.map((n) => <NoticiasCategorias new={n} key={n._id} />)
     ) : (
       <p>Lo sentimos, aún no tenemos nada que decir respecto a {params.name}</p>
     );

@@ -1,5 +1,6 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel'
+import '../index.css';
 
 export default function Carrusel(props) {
 
@@ -10,11 +11,11 @@ export default function Carrusel(props) {
     <img
       className="w-100"
       src={n.img}
-      alt="First slide"
+      alt={n.imgalt}
     />
-    <Carousel.Caption>
-      <h3>{n.title}</h3>
-      <p>{n.preview}</p>
+    <Carousel.Caption >
+      <h3 className="carousel-bg">{n.title}</h3>
+      <p style={{ backgroundColor: "#00000067"}}>{n.preview}</p>
     </Carousel.Caption>
   </Carousel.Item>) }
   
