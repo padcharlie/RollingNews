@@ -1,7 +1,7 @@
 import { Button, Modal } from "react-bootstrap";
 import { Form, Row, Col, Label, FormGroup, Input } from "reactstrap";
 import { useState, useEffect } from "react";
-import { Swal } from "sweetalert2";
+//import { Swal } from "sweetalert2";
 import { useHistory } from "react-router-dom";
 
 export default function ModalLogin(props) {

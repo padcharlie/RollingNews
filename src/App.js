@@ -78,7 +78,7 @@ function App() {
         <Navegacion
           cats={cats}
           admins={admins}
-          consultarAdmins={consultarAdmins}
+          consultarAdmins={consultarAdmins}          
         />
         <Switch>
           <Route exact path="/">
