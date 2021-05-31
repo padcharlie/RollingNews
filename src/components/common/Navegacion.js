@@ -19,13 +19,6 @@ import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 >>>>>>> d2f1a39b7493cfb0280a52588041df6daa7288e3
 
 export default function Navegacion(props) {
-  const mascategorias = props.cats.filter(
-    (c) =>
-      c.name !== "Actualidad" &&
-      c.name !== "Tecnologia" &&
-      c.name !== "Deportes" &&
-      c.name !== "Espectaculos"
-  );
 
   const [loggedAdmin, setLoggedAdmin] = useState(
     JSON.parse(localStorage.getItem("loggedAdmin"))
