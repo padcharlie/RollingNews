@@ -139,7 +139,12 @@ const eliminarNoticias = async (name)=>{
             </Form>
 </div>
 <h3>Todas las categorías</h3>
-{props.cats.map((c)=><p>{c.name}<Button className="btn btn-light btn-outline-danger mx-5" onClick={() =>eliminarCategoria(c._id, c.name)}><FontAwesomeIcon icon={faTrash}> </FontAwesomeIcon> </Button></p>)}
+<p>Actualidad</p>
+<p>Espectáculos</p>
+<p>Deportes</p>
+<p>Tecnología</p>
+{props.cats.map((c)=><p>{c.name}<Button className="btn btn-light btn-outline-danger mx-5" onClick={() =>eliminarCategoria(c._id, c.name)}><FontAwesomeIcon icon={faTrash}> </FontAwesomeIcon> </Button>
+</p>)}
         </div>
     )
 };
