@@ -47,10 +47,10 @@ export default function EditarNoticias(props) {
     const handleCategory = (e) => {
         setCategoria(e.target.value);
       };
-      const handleDate = (e) => {
+    const handleDate = (e) => {
         setDate(e.target.value);
       };
-    
+  
       const handleDestacada = () =>
     {
       if (destacada === false) {

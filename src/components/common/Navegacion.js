@@ -109,14 +109,14 @@ export default function Navegacion(props) {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-mainbg">
-      <NavLink
+      <Link
         exact={true}
        to="/"
         id="nav-link"
         className="navbar-brand navbar-logo"
       >
         Rolling News
-      </NavLink>
+      </Link>
       <button
         className="navbar-toggler"
         onClick={function () {
