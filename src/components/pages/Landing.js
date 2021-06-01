@@ -12,11 +12,9 @@ export default function Landing(props) {
     <Bannersuperior />
     </div>
     <Carrusel  news={props.news}/>
-        {/* Banner COVID */}
     <Container className="d-flex w-75 my-2 mx-auto" >
     <img className="img-fluid"  src={process.env.PUBLIC_URL + "/images/covid1.png"} alt="Quédese en casa. Rolling news le da las noticias" />
     </Container>
-        {/* Noticias por categorias */}
     <Container className="d-flex w-75 my-2 mx-auto" >
         <CarrouselSecciones news={props.news} categoria='Pruebas'></CarrouselSecciones>
     </Container>
@@ -28,6 +26,9 @@ export default function Landing(props) {
     </Container>
     <Container className="d-flex w-75 my-2 mx-auto" >
     <img className="img-fluid"  src={process.env.PUBLIC_URL + "/images/covid3.png"} alt="Mantenga la distancia social. Rolling news le da las noticias" />
+    </Container>
+    <Container className="d-flex w-75 my-2 mx-auto" >
+        <CarrouselSecciones news={props.news} categoria='Deportes'></CarrouselSecciones>
     </Container>
     </Fragment>
     )

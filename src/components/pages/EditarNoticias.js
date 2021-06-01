@@ -202,6 +202,7 @@ export default function EditarNoticias(props) {
               name="selectMulti"
               id="exampleSelectMulti"
               multiple
+              required
             >
               {props.cats.map((c) => (
               <option value={c.name} onClick={handleCategory} key={c._id}>
@@ -222,7 +223,7 @@ export default function EditarNoticias(props) {
             </Form.Group>
             <Form.Group as={Col}>
               <Form.Label>Fecha</Form.Label>
-              <Form.Control type="date" onSelect={handleDate} defaultValue={noticia.date}/>
+              <Form.Control type="date" onSelect={handleDate} required defaultValue={noticia.date}/>
             </Form.Group>
           </Form.Row>
           <Form.Group controlId="formBasicCheckbox">

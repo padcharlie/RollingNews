@@ -49,17 +49,17 @@ export default function Noticias(props) {
   return (
     <Container>
       <Link to={"/noticias/" + props.new.title}>
-        <h2>{props.new.title}</h2>
+        <h2 >{props.new.title}</h2>
       </Link>
       <div>{props.new.preview}</div>
       <div className="mb-2">
         <Link
-          className="btn btn-warning mr-2 text-light"
+          className="btn boton mr-2 text-light"
           to={`/admin/editar/${props.new._id}`}
         >
           <FontAwesomeIcon icon={faPencilAlt}></FontAwesomeIcon>
         </Link>
-        <Button variant="danger" onClick={() => borrarNoticia(props.new._id)}>
+        <Button className="boton2" onClick={() => borrarNoticia(props.new._id)}>
           <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon>
         </Button>
       </div>
