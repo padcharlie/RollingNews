@@ -19,7 +19,7 @@ export default function EditarNoticias(props) {
     const [categoria, setCategoria] = useState('');
     const [date, setDate] = useState('');
     const [destacada, setDestacada] = useState(false);
-    const {id}=useParams();
+    const {_id}=useParams();
     const [previewCounter,setPreviewCounter] = useState("")
     const history = useHistory();
     const [loggedAdmin, setLoggedAdmin] = useState(
@@ -28,7 +28,7 @@ export default function EditarNoticias(props) {
     
     const consultarNoticia = async() =>{
         try {
-          const respuesta = await fetch(URLNEWS+"/"+id)
+          const respuesta = await fetch(URLNEWS+"/"+_id)
           if (respuesta.status === 200 ){
             const noticiaEncontrada = await respuesta.json();
             setNoticia(noticiaEncontrada);
@@ -201,7 +201,7 @@ export default function EditarNoticias(props) {
               multiple
             >
               {props.cats.map((c) => (
-              <option value={c.name} onClick={handleCategory} key={c.id}>
+              <option value={c.name} onClick={handleCategory} key={c._id}>
                   {c.name} 
                 </option>
               ))}
