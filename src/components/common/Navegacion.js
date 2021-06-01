@@ -250,7 +250,7 @@ export default function Navegacion(props) {
           </NavDropdown>
         </Nav>
         <Nav className="mr-5">
-          {mostrarAdmin()}
+          { {mostrarAdmin()} }
           {mostrarNoAdmin()}
         </Nav>
       </Navbar.Collapse>
