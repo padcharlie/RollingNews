@@ -29,9 +29,11 @@ export default function EditarNoticias(props) {
     const consultarNoticia = async() =>{
         try {
           const respuesta = await fetch(URLNEWS+"/"+_id)
+          console.log(respuesta)
           if (respuesta.status === 200 ){
             const noticiaEncontrada = await respuesta.json();
             setNoticia(noticiaEncontrada);
+            console.log(noticiaEncontrada)
           }
         } catch (error) {
           console.log(error);

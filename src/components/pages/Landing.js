@@ -24,6 +24,9 @@ export default function Landing(props) {
     <img className="img-fluid"  src={process.env.PUBLIC_URL + "/images/covid2.png"} alt="Lávese las manos con frecuencia y use barbijo. Rolling news le da las noticias" />
     </Container>
     <Container className="d-flex w-75 my-2 mx-auto" >
+        <CarrouselSecciones news={props.news} categoria='Actualidad'></CarrouselSecciones>
+    </Container>
+    <Container className="d-flex w-75 my-2 mx-auto" >
     <img className="img-fluid"  src={process.env.PUBLIC_URL + "/images/covid3.png"} alt="Mantenga la distancia social. Rolling news le da las noticias" />
     </Container>
     </Fragment>
