@@ -1,4 +1,4 @@
-import { faPencilAlt, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faPencilAlt, faStar, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Container, Button } from "react-bootstrap";
@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 
 export default function Noticias(props) {
   const URLNEWS = process.env.REACT_APP_API_URL_NEWS;
+  const destacada = (props.new.destacada)? (<FontAwesomeIcon icon={faStar}></FontAwesomeIcon>) : ("")
 
   const borrarNoticia = (_id) => {
     Swal.fire({
@@ -45,11 +46,10 @@ export default function Noticias(props) {
       }
     });
   };
-
   return (
     <Container>
       <Link to={"/noticias/" + props.new.title}>
-        <h2 >{props.new.title}</h2>
+        <h2 >{destacada}{props.new.title}</h2>
       </Link>
       <div>{props.new.preview}</div>
       <div className="mb-2">

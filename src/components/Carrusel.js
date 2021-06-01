@@ -1,5 +1,6 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel'
+import { Link } from 'react-router-dom';
 import '../index.css';
 
 export default function Carrusel(props) {
@@ -13,7 +14,7 @@ src={n.img}
 alt={n.imgalt}
 />
 <Carousel.Caption >
-<h3 className="carousel-bg">{n.title}</h3>
+<Link to={"/noticias/"+n.title} style={{ backgroundColor: "#00000067"}}><h3 style={{color:"#FFFFFF"}}>{n.title}</h3></Link>
 <p style={{ backgroundColor: "#00000067"}}>{n.preview}</p>
 </Carousel.Caption>
 </Carousel.Item>) }
