@@ -14,7 +14,7 @@ src={n.img}
 alt={n.imgalt}
 />
 <Carousel.Caption >
-<Link to={"/noticias/"+n.title} style={{ backgroundColor: "#00000067"}}><h3 style={{color:"#FFFFFF"}}>{n.title}</h3></Link>
+<Link to={"/noticias/"+n.title} style={{color:"#FFFFFF"}} ><h3 style={{ backgroundColor: "#00000067"}} >{n.title}</h3></Link>
 <p style={{ backgroundColor: "#00000067"}}>{n.preview}</p>
 </Carousel.Caption>
 </Carousel.Item>) }
