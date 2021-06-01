@@ -59,7 +59,6 @@ function App() {
       if (responsecats.status === 200) {
         const listarCategorias = await responsecats.json();
         setCats(listarCategorias);
-        console.log(listarCategorias);
       };
     }catch(error){
       console.log(error);

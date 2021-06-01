@@ -29,11 +29,11 @@ export default function EditarNoticias(props) {
     const consultarNoticia = async() =>{
         try {
           const respuesta = await fetch(URLNEWS+"/"+_id)
-          console.log(respuesta)
+          console.log("noticia encontrada respuesta",respuesta)
           if (respuesta.status === 200 ){
             const noticiaEncontrada = await respuesta.json();
             setNoticia(noticiaEncontrada);
-            console.log(noticiaEncontrada)
+            console.log("noticia encontrada",noticiaEncontrada)
           }
         } catch (error) {
           console.log(error);
@@ -77,7 +77,7 @@ export default function EditarNoticias(props) {
              categoria,
              destacada
             };
-            console.log(`${URLNEWS}/${noticia._id}`)
+           
             const respuesta = await fetch(`${URLNEWS}/${noticia._id}`,{
               method: "PUT",
               headers: {"Content-Type": "application/json"},
