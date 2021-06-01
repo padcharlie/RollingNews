@@ -15,6 +15,7 @@ import EditarNoticias from "./components/pages/EditarNoticias";
 import AdminCategorias from "./components/pages/AdminCategorias";
 import AdminPage from "./components/pages/AdminPage";
 
+
 function App() {
   const URLCAT = process.env.REACT_APP_API_URL_CAT;
   const URLNEWS = process.env.REACT_APP_API_URL_NEWS;

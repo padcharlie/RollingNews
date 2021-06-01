@@ -110,7 +110,7 @@ export default function Navegacion(props) {
           <NavDropdown title="Más" id="basic-nav-dropdown">
             {mascategorias.map((c) => (
               //------------------------------->  _id???????????????
-              <NavDropdown.Item key={c.id}>
+              <NavDropdown.Item key={c._id}>
                 <NavLink
                   exact={true}
                   to={"/categorias/" + c.name}
