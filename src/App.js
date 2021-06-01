@@ -87,10 +87,6 @@ function App() {
           </Route>
           <Route exact path="/admin">
             <AdminPage
-              news={news}
-              cats={cats}
-              admins={admins}
-              consultarNews={consultarNews}
             />
           </Route>
           <Route exact path="/admin/agregar">
@@ -109,7 +105,7 @@ function App() {
               consultarNews={consultarNews}
             />
           </Route>
-          <Route exact path="/admin/editar/:id">
+          <Route exact path="/admin/editar/:_id">
             <EditarNoticias
               news={news}
               cats={cats}

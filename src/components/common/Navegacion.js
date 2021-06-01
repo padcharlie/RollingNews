@@ -32,19 +32,35 @@ export default function Navegacion(props) {
     if (loggedAdmin !== "") {
       return (
         <ButtonGroup>
-          <Button className="btn m-2 btn-light">
-            <Link style={{ textDecoration: "none" }} to="/admin/noticias">
+          <Button className="btn m-2 boton2 ">
+            <Link style={{ textDecoration: "none" }} className="text-light" to="/admin/noticias">
               Administrar noticias
             </Link>
           </Button>
-          <Button className="btn m-2 btn-light">
-            <Link style={{ textDecoration: "none" }} to="/admin/categorias">
+          <Button className="btn m-2 boton2">
+            <Link style={{ textDecoration: "none" }} className="text-light" to="/admin/categorias">
               Administrar categorias
             </Link>
           </Button>
-          <Button onClick={cerrarSesion}>
+          <Button className="m-2 boton2"onClick={cerrarSesion}>
             <FontAwesomeIcon icon={faSignOutAlt}></FontAwesomeIcon>
           </Button>
+        </ButtonGroup>
+      );
+    }
+  };
+  
+  const mostrarNoAdmin = () => {
+    if (loggedAdmin === "") {
+      return (
+        <ButtonGroup>
+          <ModalSuscripcion />
+          <ModalLogin
+            admins={props.admins}
+            consultarAdmin={props.consultarAdmin}
+            setLoggedAdmin={setLoggedAdmin}
+            mostrarAdmin={mostrarAdmin}
+          />
         </ButtonGroup>
       );
     }
@@ -78,21 +94,7 @@ export default function Navegacion(props) {
       });
     });
   }
-  const mostrarNoAdmin = () => {
-    if (loggedAdmin === "") {
-      return (
-        <ButtonGroup>
-          <ModalSuscripcion />
-          <ModalLogin
-            admins={props.admins}
-            consultarAdmin={props.consultarAdmin}
-            setLoggedAdmin={setLoggedAdmin}
-            mostrarAdmin={mostrarAdmin}
-          />
-        </ButtonGroup>
-      );
-    }
-  };
+  
 
   useEffect(() => {
     mostrarAdmin();
