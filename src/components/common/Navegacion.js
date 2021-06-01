@@ -6,7 +6,7 @@ import ModalLogin from "./ModalLogin";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../common/Navegacion.css";
 import $ from "jquery";
-import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faPlusSquare, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navegacion(props) {
   const [loggedAdmin, setLoggedAdmin] = useState(
@@ -130,9 +130,9 @@ export default function Navegacion(props) {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <i className="fas fa-barra text-white"></i>
+        <FontAwesomeIcon className="text-light "icon={faPlusSquare}></FontAwesomeIcon>
       </button>
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      <div  className="collapse navbar-collapse" id="navbarSupportedContent">
         {mostrarAdmin()}
         {mostrarNoAdmin()}
         <ul className="navbar-nav ml-auto">
@@ -181,7 +181,7 @@ export default function Navegacion(props) {
             </NavLink>
           </li>
           <li>
-            <NavDropdown title="Más" className="dropdown" id="nav-link">
+              <NavDropdown title="Más" className='dropdown' id="nav-link">
               {props.cats.map((c) => (
                 <NavDropdown.Item>
                   <NavLink
