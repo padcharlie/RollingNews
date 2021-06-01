@@ -62,7 +62,8 @@ export default function EditarNoticias(props) {
 
     const handleSubmit = async(e) =>{
         e.preventDefault();
-        if(campoRequerido(tituloRef.current.value) && campoRequerido(resumenRef.current.value) && campoRequerido(detalleRef.current.value) && campoRequerido(imgRef.current.value) && campoRequerido(imgaltRef.current.value) &&   rangoTexto(resumenRef.current.value) ){
+        console.log("titulo",rangoTexto(resumenRef.current.value))
+        if(campoRequerido(tituloRef.current.value) && campoRequerido(resumenRef.current.value) && campoRequerido(detalleRef.current.value) && campoRequerido(imgRef.current.value) && campoRequerido(imgaltRef.current.value) &&  campoRequerido(autorRef.current.value) && rangoTexto(resumenRef.current.value) ){
           try{
             const noticiaModificada={
              title: tituloRef.current.value,
