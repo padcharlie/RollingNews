@@ -8,8 +8,6 @@ import { useHistory } from 'react-router-dom';
 
 export default function AdminCategorias(props) {
 
- 
-
     const [name, setName]=useState("");
     const URLCats = process.env.REACT_APP_API_URL_CAT; 
     const URLNEWS = process.env.REACT_APP_API_URL_NEWS;
@@ -78,7 +76,7 @@ const eliminarNoticias = async (name)=>{
               
 }
 
-    const eliminarCategoria= (id,name) => {
+    const eliminarCategoria= (_id,name) => {
         Swal.fire({
           title: "¿Desea eliminar la categoría?",
           text: "Eliminar la categoría elimina todas las noticias pertenecientes a la misma",
@@ -92,7 +90,7 @@ const eliminarNoticias = async (name)=>{
           if (result.isConfirmed) {
             
             try {
-              const respuesta = await fetch(URLCats + "/" + "_" +id, {
+              const respuesta = await fetch(URLCats + "/" + _id, {
                 method: "DELETE",
                 headers: {
                   "Content-Type": "application/json",
