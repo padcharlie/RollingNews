@@ -5,7 +5,7 @@ import BannerCotizacion from '../Bannercotizacion/BannerCotizacion';
 
 const Bannersuperior = () => {
     return (
-        <Container className='py-2'>
+        <Container className='pb-1 pt-2'>
             <Row>
                 <Col md={5}>
             <BannerCotizacion />

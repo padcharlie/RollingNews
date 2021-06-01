@@ -19,7 +19,7 @@ export default function EditarNoticias(props) {
     const [categoria, setCategoria] = useState('');
     const [date, setDate] = useState('');
     const [destacada, setDestacada] = useState(false);
-    const {id}=useParams();
+    const {_id}=useParams();
     const [previewCounter,setPreviewCounter] = useState("")
     const history = useHistory();
     const [loggedAdmin, setLoggedAdmin] = useState(
@@ -28,10 +28,12 @@ export default function EditarNoticias(props) {
     
     const consultarNoticia = async() =>{
         try {
-          const respuesta = await fetch(URLNEWS+"/"+id)
+          const respuesta = await fetch(URLNEWS+"/"+_id)
+          console.log("noticia encontrada respuesta",respuesta)
           if (respuesta.status === 200 ){
             const noticiaEncontrada = await respuesta.json();
             setNoticia(noticiaEncontrada);
+            console.log("noticia encontrada",noticiaEncontrada)
           }
         } catch (error) {
           console.log(error);
@@ -75,7 +77,7 @@ export default function EditarNoticias(props) {
              categoria,
              destacada
             };
-            console.log(`${URLNEWS}/${noticia._id}`)
+           
             const respuesta = await fetch(`${URLNEWS}/${noticia._id}`,{
               method: "PUT",
               headers: {"Content-Type": "application/json"},
@@ -201,7 +203,7 @@ export default function EditarNoticias(props) {
               multiple
             >
               {props.cats.map((c) => (
-              <option value={c.name} onClick={handleCategory} key={c.id}>
+              <option value={c.name} onClick={handleCategory} key={c._id}>
                   {c.name} 
                 </option>
               ))}

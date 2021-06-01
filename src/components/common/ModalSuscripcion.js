@@ -25,7 +25,7 @@ export default function ModalSuscripcion() {
 
         return (
           <>
-            <Button variant="primary" className="m-2" onClick={handleShow}>
+            <Button className="m-2 boton2" onClick={handleShow}>
               Suscribirse
             </Button>
       

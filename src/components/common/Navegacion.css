@@ -195,3 +195,15 @@ nav #btnsubscrip{
         left: -25px;
     }
 }
+
+.titulo-categoria{
+   color:#162341
+}
+
+.fondo-cards{
+    background-color: #913071;
+}
+.boton2{
+    background-color: #913071 ;
+    border-color: #913071;
+}

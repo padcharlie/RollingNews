@@ -15,6 +15,7 @@ import EditarNoticias from "./components/pages/EditarNoticias";
 import AdminCategorias from "./components/pages/AdminCategorias";
 import AdminPage from "./components/pages/AdminPage";
 
+
 function App() {
   const URLCAT = process.env.REACT_APP_API_URL_CAT;
   const URLNEWS = process.env.REACT_APP_API_URL_NEWS;
@@ -58,7 +59,6 @@ function App() {
       if (responsecats.status === 200) {
         const listarCategorias = await responsecats.json();
         setCats(listarCategorias);
-        console.log(listarCategorias);
       };
     }catch(error){
       console.log(error);
@@ -86,10 +86,6 @@ function App() {
           </Route>
           <Route exact path="/admin">
             <AdminPage
-              news={news}
-              cats={cats}
-              admins={admins}
-              consultarNews={consultarNews}
             />
           </Route>
           <Route exact path="/admin/agregar">
@@ -108,7 +104,7 @@ function App() {
               consultarNews={consultarNews}
             />
           </Route>
-          <Route exact path="/admin/editar/:id">
+          <Route exact path="/admin/editar/:_id">
             <EditarNoticias
               news={news}
               cats={cats}
