@@ -41,7 +41,9 @@ export default function ModalLogin(props) {
     }
   };
  
-  
+  useEffect(() => {
+    props.mostrarAdmin();
+  },[]);
 
 
   return (

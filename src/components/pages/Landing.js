@@ -5,7 +5,10 @@ import Carrusel from "../Carrusel"
 export default function Landing(props) {
     return (
     <Fragment>
-    <Bannersuperior/>
+        
+        <div className="fondo-banner pt-2">
+    <Bannersuperior />
+    </div>
     <Carrusel  news={props.news}/>
     <container className="d-flex w-75 my-2 mx-auto" >
     <img className="img-fluid"  src={process.env.PUBLIC_URL + "/images/covid1.png"} alt="Quédese en casa. Rolling news le da las noticias" />

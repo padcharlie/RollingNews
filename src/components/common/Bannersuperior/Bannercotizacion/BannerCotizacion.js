@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Spinner } from 'react-bootstrap';
-import InfoCoti from "./InfoCoti";
 
 
 export default function BannerCotizacion() {
@@ -27,7 +26,7 @@ export default function BannerCotizacion() {
 
   return (
     <div>
-      Dolar Oficial <b>{(dolar[0]?.casa.compra)}</b> -Dolar Blue <b>{(dolar[1]?.casa.compra)}</b>
+      Dólar Oficial {(dolar[0]?.casa.compra)} - Dólar Blue {(dolar[1]?.casa.compra)}
     </div>
   );
 }
