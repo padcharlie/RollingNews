@@ -7,10 +7,10 @@ const CarrouselSecciones = (props) => {
       <CardColumns>
         <Card bg="primary" text="white" className="text-center p-3">
           <blockquote className="blockquote mb-0 card-body">
-            <h1>Deportes</h1>
+            <h1>{props.categoria}</h1>
           </blockquote>
         </Card>
-        {props.news.filter(n => n.category === 'Pruebas').map((n) => (
+        {props.news.filter(n => n.category === props.categoria).map((n) => (
             
                 <Card className="text-center py-3" key={n._id}>
                 <Card.Title>{n.title}</Card.Title>
