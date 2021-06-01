@@ -1,43 +1,9 @@
-/* nav{
-    background:#162341;
-    
-}
-nav #colorLetra{
-    color: aliceblue;
-    font-size: 2.5rem;
-}
-nav #nav-link {
-    color: rgb(194, 224, 250);
-    
-}
-nav #nav-link:hover{
-    color: rgb(239, 244, 245);
-    cursor: pointer;
-}
-nav #btnsubscrip{
-    border: 2px #40BF9D solid;
-    color: #40BF9D ;
-    background-color: #162341;
-}
-nav #btnsubscrip:hover{
-    color: #40BF9D;
-    cursor: pointer;
-}
-nav #btnloguin{
-    background-color: #40BF9D;
-    color: #162341;
-    border: 2px #162341 solid;
-}
-nav #btnloguin:hover{
-    color: #162341;
-    cursor: pointer;
-}
-nav #basic-nav-dropdown{
-    color: aliceblue;
-} */
 
 body {
     background-color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction:column;
 }
 
 * {
@@ -228,4 +194,8 @@ nav #btnsubscrip {
 
 .colorMorado {
     color: #913071 !important;
+}
+.pie{
+    margin-top: auto;
+    bottom: 0;
 }

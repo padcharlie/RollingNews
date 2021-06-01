@@ -19,7 +19,7 @@ alt={n.imgalt}
 </Carousel.Caption>
 </Carousel.Item>) }
 
-</Carousel>) : <span>ROLLING NEWS</span>
+</Carousel>) : <h1 className="text-center mt-2">ROLLING NEWS</h1>
 
     return (
       <div>
