@@ -133,7 +133,7 @@ function App() {
           <Route exact path="*">
             <Error404 /> 
           </Route>
-          <Route exact path="/contacus">
+          <Route exact path="/contacUs">
             <ContacUs/>
           </Route>
         </Switch>
