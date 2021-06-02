@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {  Fragment, useState, useEffect } from "react";
 import { Spinner } from 'react-bootstrap';
 
 
@@ -18,15 +18,17 @@ export default function BannerCotizacion() {
   }
     }
    
-    console.log(dolar)
+    const mostrarComponente = (cargando === true )? (<Spinner animation="border" size="sm"></Spinner>) : (<div>
+      Dólar Oficial <b>{(dolar[0]?.casa.compra)}</b> - Dólar Blue <b>{(dolar[1]?.casa.compra)}</b>
+    </div>);
 
   useEffect(() => {
     consultarAPICoti();
   }, []);
 
   return (
-    <div>
-      Dólar Oficial <b>{(dolar[0]?.casa.compra)}</b> - Dólar Blue <b>{(dolar[1]?.casa.compra)}</b>
-    </div>
+    <Fragment>
+    {mostrarComponente}
+</Fragment>
   );
 }
