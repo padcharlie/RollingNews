@@ -27,7 +27,7 @@ const  mostrarNoticias =
     <Fragment>
       {bloquearPagina()}
       <Link to="/admin/agregar"> <h1 className="mt-2 container colorMorado">Añadir Noticia</h1></Link>
-      <h1 className="mx-3">-Todas las noticias:</h1>
+      <h1 className="mx-3">Todas las noticias</h1>
       {mostrarNoticias}
     </Fragment>
   );
