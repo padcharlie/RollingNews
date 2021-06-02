@@ -4,8 +4,8 @@ import "../common/Navegacion.css";
 
 const Footer = () => {
     return (
-      <div className='colordefondo footer'>
-        <div className='text-center text-light d-flex py-3 justify-content-center sm-2'>
+      <div className='colordefondo'>
+        <div className='text-center text-light d-flex pt-3 justify-content-center'>
             <div><h6 className='flex-column mt-2'>Categorias:
             <NavLink exact={true} to='/categorias/Politica' className='nav-link text-light'>Politica</NavLink>
       <NavLink exact={true} to='/categorias/Actualidad' className='nav-link text-light'>Actualidad</NavLink>
@@ -21,12 +21,15 @@ const Footer = () => {
       </div>
       <div className='mx-3 mt-2'>
 <h6>Encontranos en:</h6>
-<a href="https://es-la.facebook.com/" className='text-light'>Facebook</a> <br />
-<a href="https://twitter.com/home?lang=es" className='text-light'>Instagram</a> <br />
-<a href="https://www.youtube.com/watch?v=tiDy3cuscFY" className='text-light'>Youtube</a> <br />
+<a href="https://es-la.facebook.com/" target="_blank" className='text-light'>Facebook</a> <br />
+<a href="https://www.instagram.com/rollingcodeschool/" target="_blank" className='text-light'>Instagram</a> <br />
+<a href="https://www.youtube.com/" target="_blank" className='text-light'>Youtube</a> <br />
 </div>
 </div>
-<p className='text-light text-center'>&copy; Todos los derechos resevados</p></div>
+<div className='d-flex justify-content-center'>
+<NavLink exact={true} to='/aboutUs' className='lead nav-link text-light'>About us</NavLink>
+<NavLink exact={true} to='/TerminosCondiciones' className='lead nav-link text-light'>Terminos y condiciones</NavLink></div>
+<p className='text-light text-center'>&copy; Todos los derechos reservados</p></div>
 );
 };
 export default Footer;
