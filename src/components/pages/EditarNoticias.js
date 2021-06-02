@@ -16,7 +16,9 @@ export default function EditarNoticias(props) {
     const img2Ref = useRef('');
     const imgalt2Ref = useRef('');
     const autorRef = useRef('');
-    const [categoria, setCategoria] = useState('');
+    //categoria
+    //const catagoriaBug = useRef('');
+    const [category, setCategoria] = useState('');
     const [date, setDate] = useState('');
     const [destacada, setDestacada] = useState(false);
     const {_id}=useParams();
@@ -74,16 +76,24 @@ export default function EditarNoticias(props) {
              img2:img2Ref.current.value,
              imgalt2:imgalt2Ref.current.value,
              author:autorRef.current.value,
+             
              date,
-             categoria,
+             category,
              destacada
             };
+
            
+
+           
+
+           
+           console.log('Noticia modificada =', noticiaModificada)
             const respuesta = await fetch(`${URLNEWS}/${noticia._id}`,{
               method: "PUT",
               headers: {"Content-Type": "application/json"},
               body: JSON.stringify(noticiaModificada)
               });
+              
     
             if ((await respuesta.status) === 200) {
               Swal.fire("Noticia modificada",
@@ -203,6 +213,7 @@ export default function EditarNoticias(props) {
               id="exampleSelectMulti"
               multiple
               required
+              onChange={(e)=>setCategoria(e.target.value)}
             >
               {props.cats.map((c) => (
               <option value={c.name} onClick={handleCategory} key={c._id}>
