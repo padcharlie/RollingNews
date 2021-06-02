@@ -144,3 +144,10 @@ const eliminarNoticias = async (name)=>{
         </div>
     )
 };
+
+
+
+
+
+
+

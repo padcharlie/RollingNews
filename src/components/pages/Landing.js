@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import Bannersuperior from "../common/Bannersuperior/Bannerclima/Bannersuperior";
 import Carrusel from "../Carrusel";
 import { Carousel, Container } from "react-bootstrap";
-import CarrouselSecciones from "../common/SeccionesLP/CarrouselSecciones";
+import CarrouselSecciones from "./CarrouselSecciones";
 
 export default function Landing(props) {
   return (
@@ -45,7 +45,7 @@ export default function Landing(props) {
       <Container className="d-flex w-75 my-2 mx-auto">
         <img
           className="img-fluid"
-          src={process.env.PUBLIC_URL + "/images/publicidad1.jpeg"}
+          src={process.env.PUBLIC_URL + "/images/publi1.png"}
           alt="Publicítese en Rolling News"
         />
       </Container>
@@ -58,7 +58,7 @@ export default function Landing(props) {
       <Container className="d-flex w-75 my-2 mx-auto">
         <img
           className="img-fluid"
-          src={process.env.PUBLIC_URL + "/images/publicidad1.jpeg"}
+          src={process.env.PUBLIC_URL + "/images/publi1.png"}
           alt="Publicítese con Rolling News"
         />
       </Container>
