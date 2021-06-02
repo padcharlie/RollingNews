@@ -187,18 +187,23 @@ console.log("rango texto", rangoTexto(preview));
         </Form.Row>
         <FormGroup>
           <Label for="exampleSelectMulti">Categoría</Label>
-          <Input
-            type="select"
+          <Form.Control
+            as="select"
             name="selectMulti"
             id="exampleSelectMulti"
             multiple
+            onChange={(e) => setCategory(e.target.value)}
+            
+            
+
           >
             {props.cats.map((c) => (
-              <option value={c.name} onClick={handleCategory} key={c.id}>
+              <option value={c.name} onClick={handleCategory} key={c._id}>
                 {c.name}
               </option>
             ))}
-          </Input>
+          </Form.Control>
+          
         </FormGroup>
         <Form.Row>
           <Form.Group as={Col}>
