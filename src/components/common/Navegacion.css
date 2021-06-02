@@ -163,8 +163,8 @@ nav #btnsubscrip{
     left: -25px;
 }
 
-@media (max-width:991px){
-    #navbarSupporteedContent ul li a {
+@media (max-width: 767.98px){
+    #navbarSupportedContent ul li a {
         padding: 12px 30px;
     }
     .hori-selector{
