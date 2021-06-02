@@ -1,10 +1,10 @@
 import React from "react";
 import { Card, CardColumns } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import '../Navegacion.css'
+import '../common/Navegacion.css'
 const CarrouselSecciones = (props) => {
   const soloTresNews= props.news.filter(n => n.category === props.categoria).slice(0,3)
-  console.log("solo tres", soloTresNews)
+
   return (
     <div>
         <h5 className="titulo-categoria text-center p-1">{props.categoria}</h5>

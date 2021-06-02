@@ -1,9 +1,8 @@
 
 body {
     background-color: #fff;
+    
     min-height: 100vh;
-    display: flex;
-    flex-direction:column;
 }
 
 * {
@@ -148,7 +147,7 @@ nav #btnsubscrip {
 }
 
 @media (max-width:991px) {
-    #navbarSupporteedContent ul li a {
+    #navbarSupportedContent ul li a {
         padding: 12px 30px;
     }
     .hori-selector {

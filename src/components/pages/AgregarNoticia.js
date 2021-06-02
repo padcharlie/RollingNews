@@ -1,10 +1,5 @@
 import React, { useState } from "react";
-import {
-  Col,
-  Container,
-  Form,
-  Button
-} from "react-bootstrap";
+import { Col, Container, Form, Button } from "react-bootstrap";
 import { useHistory } from "react-router";
 import { FormGroup, Label, Input } from "reactstrap";
 import Swal from "sweetalert2";
@@ -19,7 +14,7 @@ export default function AgregarNoticia(props) {
   const [preview, setPreview] = useState("");
   const [detail, setDetail] = useState("");
   const [img, setImg] = useState("");
-  const  [img2, setImg2] = useState("");
+  const [img2, setImg2] = useState("");
   const [imgalt, setImgAlt] = useState("");
   const [imgalt2, setImgAlt2] = useState("");
   const [destacada, setDestacada] = useState(false);
@@ -37,20 +32,18 @@ export default function AgregarNoticia(props) {
     setDate(e.target.value);
   };
 
-  const handleDestacada = () =>
-{
-  if (destacada === false) {
-    setDestacada(true);
-  }else {
-    setDestacada(false);
-  }
-}
-
-console.log("rango texto", rangoTexto(preview));
+  const handleDestacada = () => {
+    if (destacada === false) {
+      setDestacada(true);
+    } else {
+      setDestacada(false);
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (campoRequerido(title) &&
+    if (
+      campoRequerido(title) &&
       campoRequerido(author) &&
       campoRequerido(date) &&
       campoRequerido(preview) &&
@@ -70,7 +63,7 @@ console.log("rango texto", rangoTexto(preview));
         imgalt,
         img2,
         imgalt2,
-        destacada
+        destacada,
       };
       try {
         const response = await fetch(URLNews, {
@@ -98,21 +91,20 @@ console.log("rango texto", rangoTexto(preview));
     } else {
       Swal.fire("Oh no!", "Quedan campos por completar correctamente", "error");
     }
-
   };
 
   const history = useHistory();
- 
-  const bloquearPagina = ()=>{
-    if (loggedAdmin === ""){Swal.fire({
+
+  const bloquearPagina = () => {
+    if (loggedAdmin === "") {
+      Swal.fire({
         icon: "error",
         title: "Oops...",
         text: "¡Debe ser admin para ingresar!",
         allowOutsideClick: false,
-      }).then(history.push("/"))
- }};
-
-
+      }).then(history.push("/"));
+    }
+  };
 
   return (
     <Container>
@@ -136,7 +128,7 @@ console.log("rango texto", rangoTexto(preview));
             onChange={(e) => setPreview(e.target.value)}
           />
           <Form.Text id="resumenHelpBlock" muted>
-            El resumen debe tener entre 1 y 200 caracteres. Ha escrito {" "}
+            El resumen debe tener entre 1 y 200 caracteres. Ha escrito{" "}
             {preview.length} caracteres.
           </Form.Text>
         </Form.Group>
@@ -220,8 +212,12 @@ console.log("rango texto", rangoTexto(preview));
           </Form.Group>
         </Form.Row>
         <Form.Group controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Noticia destacada" onClick={handleDestacada} />
-  </Form.Group>
+          <Form.Check
+            type="checkbox"
+            label="Noticia destacada"
+            onClick={handleDestacada}
+          />
+        </Form.Group>
 
         <div class="d-flex justify-content-center">
           <Button

@@ -109,14 +109,15 @@ export default function Navegacion(props) {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-mainbg">
-      <NavLink
-        exact={true}
-       to="/"
-        id="nav-link"
-        className="navbar-brand navbar-logo"
-      >
+        <Link exact
+       to="/"><span
+       id="nav-link"
+       className="navbar-brand navbar-logo"
+     >
         Rolling News
-      </NavLink>
+        </span>
+      </Link>
+    
       <button
         className="navbar-toggler"
         onClick={function () {
@@ -124,6 +125,7 @@ export default function Navegacion(props) {
             animation();
           });
         }}
+        type='button'
         data-toggle="collapse"
         data-target="#navbarSupportedContent"
         aria-expanded="false"

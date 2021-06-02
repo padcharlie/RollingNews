@@ -14,6 +14,7 @@ import AdminNoticias from "./components/pages/AdminNoticias";
 import EditarNoticias from "./components/pages/EditarNoticias";
 import AdminCategorias from "./components/pages/AdminCategorias";
 import AdminPage from "./components/pages/AdminPage";
+import AboutUs from "./components/pages/AboutUs";
 
 
 function App() {
@@ -116,7 +117,7 @@ function App() {
             <AdminCategorias
               news={news}
               cats={cats}
-              admins={admins}
+              consultarNews={consultarNews}
               consultarCats={consultarCats}
             />
           </Route>
@@ -126,9 +127,11 @@ function App() {
           <Route exact path="/noticias/:title">
             <Detalle news={news} />
           </Route>
-          <Route exact path="/*">
-            <Error404 />
+            <Route exact path='/aboutUs'>
+            <AboutUs />
           </Route>
+          <Route exact path="*">
+            <Error404 /> </Route>
         </Switch>
         <Pie />
       </Router>

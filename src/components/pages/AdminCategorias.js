@@ -10,10 +10,9 @@ export default function AdminCategorias(props) {
 
     const [name, setName]=useState("");
     const URLCats = process.env.REACT_APP_API_URL_CAT; 
+    const URLNEWS = process.env.REACT_APP_API_URL_NEWS;
     const history = useHistory();
-    const [loggedAdmin, setLoggedAdmin] = useState(
-      JSON.parse(localStorage.getItem("loggedAdmin"))
-    );
+    const [loggedAdmin, setLoggedAdmin] = useState(JSON.parse(localStorage.getItem("loggedAdmin")));
     const bloquearPagina = ()=>{
       if (loggedAdmin === ""){Swal.fire({
           icon: "error",
@@ -60,10 +59,27 @@ export default function AdminCategorias(props) {
         }
       };
     
-    const eliminarCategoria= (_id) => {
+const eliminarNoticias = async (name)=>{
+  const noticiasEliminar = props.news.filter((n)=>n.category === name)
+                console.log(noticiasEliminar)
+
+                for (let i = 0; i < noticiasEliminar.length; i++) {
+                  try{const response =  await fetch(URLNEWS + "/" + noticiasEliminar[i]._id, {
+                    method: "DELETE",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                  })
+                }catch(error){
+                  console.log("aqui falla",error)
+                }}
+              
+}
+
+    const eliminarCategoria= (_id,name) => {
         Swal.fire({
           title: "¿Desea eliminar la categoría?",
-          text: "Eliminar la categoría no elimina todas las noticias pertenecientes a la misma",
+          text: "Eliminar la categoría elimina todas las noticias pertenecientes a la misma",
           icon: "warning",
           showCancelButton: true,
           confirmButtonColor: "#3085d6",
@@ -80,15 +96,18 @@ export default function AdminCategorias(props) {
                   "Content-Type": "application/json",
                 },
               });
-
+              console.log(respuesta)
+                
               if (respuesta.status === 200) {
+                eliminarNoticias(name)
                 Swal.fire(
                   "Categoría eliminada",
-                  "La categoría seleccionada fue correctamente eliminada",
+                  "La categoría seleccionada y las noticias pertenecientes a ellas fueron correctamente eliminada",
                   "success"
-                );
+                  );
+                  props.consultarCats();
               }
-              props.consultarCats();
+             
             } catch (error) {
               console.log(error);
               Swal.fire(
@@ -112,15 +131,20 @@ export default function AdminCategorias(props) {
             type="text"
             placeholder="Ingrese una categoría"
             className="form-control"
+            aria-describedby="helpBlock"
             onChange={(e) => setName(e.target.value)}
           />
+          <Form.Text id="helpBlock" muted>
+            Por favor no incluya acentos ni signos de puntuación
+          </Form.Text>
           <Button className="btn my-1 btn-light btn-outline-primary" type="submit">
             Agregar
           </Button>
             </Form>
 </div>
 <h3>Todas las categorías</h3>
-{props.cats.map((c)=><p>{c.name}<Button className="btn btn-light btn-outline-danger mx-5" onClick={() =>eliminarCategoria(c._id)}><FontAwesomeIcon icon={faTrash}> </FontAwesomeIcon> </Button></p>)}
+{props.cats.map((c)=><p>{c.name}<Button className="btn btn-light btn-outline-danger mx-5" onClick={() =>eliminarCategoria(c._id, c.name)}><FontAwesomeIcon icon={faTrash}> </FontAwesomeIcon> </Button>
+</p>)}
         </div>
     )
 };
