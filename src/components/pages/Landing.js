@@ -3,10 +3,12 @@ import Bannersuperior from "../common/Bannersuperior/Bannerclima/Bannersuperior"
 import Carrusel from "../Carrusel";
 import { Carousel, Container } from "react-bootstrap";
 import CarrouselSecciones from "./CarrouselSecciones";
+import Publicidad from "./Publicidad";
 
 export default function Landing(props) {
   return (
     <Fragment>
+      <Publicidad></Publicidad>
       <div className="fondo-banner pt-2">
         <Bannersuperior />
       </div>
