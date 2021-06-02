@@ -6,7 +6,7 @@ export default function Publicidad() {
     useEffect(()=>{
         setTimeout(()=>{
           setShow(true)
-        }, 5000)
+        }, 10000)
       }, [])
 
     return (

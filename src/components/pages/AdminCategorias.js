@@ -96,8 +96,7 @@ const eliminarNoticias = async (name)=>{
                   "Content-Type": "application/json",
                 },
               });
-              console.log(respuesta)
-                
+              
               if (respuesta.status === 200) {
                 eliminarNoticias(name)
                 Swal.fire(
@@ -106,6 +105,7 @@ const eliminarNoticias = async (name)=>{
                   "success"
                   );
                   props.consultarCats();
+                  props.consultarNews();
               }
              
             } catch (error) {
