@@ -28,7 +28,7 @@ const Footer = () => {
 </div>
 <div className='d-flex justify-content-center'>
 <NavLink exact={true} to='/aboutUs' className='lead nav-link text-light'>About us</NavLink>
-<NavLink exact={true} to='/TerminosCondiciones' className='lead nav-link text-light'>Terminos y condiciones</NavLink></div>
+<NavLink exact={true} to='/ContacUs' className='lead nav-link text-light'>contactanos</NavLink></div>
 <p className='text-light text-center'>&copy; Todos los derechos reservados</p></div>
 );
 };
