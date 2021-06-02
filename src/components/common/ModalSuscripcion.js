@@ -16,11 +16,12 @@ export default function ModalSuscripcion() {
       
           emailjs.sendForm('service_xpq6501', 'template_c05titl', e.target, 'user_VuOzu2MjCeCYYEbY56bbP')
             .then((result) => {
-                alert('mensaje enviado');
+                alert('Se le ha enviado un mail');
             }, (error) => {
                 alert('error al enviar el mensaje');
             });
             e.target.reset();
+            setShow(false)
         }
 
         return (

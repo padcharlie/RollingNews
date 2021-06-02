@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Col, Modal, Row } from 'react-bootstrap';
+import {Modal, Row } from 'react-bootstrap';
 
 export default function Publicidad() {
     const [show, setShow] = useState(false);
     useEffect(()=>{
         setTimeout(()=>{
           setShow(true)
-        }, 10000)
+        }, 7000)
       }, [])
 
     return (

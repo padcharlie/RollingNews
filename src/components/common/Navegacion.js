@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { ButtonGroup, Navbar, Nav, Button, NavDropdown } from "react-bootstrap";
+import { ButtonGroup, Button, NavDropdown } from "react-bootstrap";
 import { Link, NavLink, useHistory } from "react-router-dom";
 import ModalSuscripcion from "./ModalSuscripcion";
 import ModalLogin from "./ModalLogin";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../common/Navegacion.css";
 import $ from "jquery";
-import { faPlus, faPlusSquare, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import {  faPlusSquare, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navegacion(props) {
   const [loggedAdmin, setLoggedAdmin] = useState(
@@ -183,7 +183,7 @@ export default function Navegacion(props) {
           </li>
           <li>
               <NavDropdown title="Más" className='dropdown ' id="nav-link">
-              {props.cats.map((c) => (
+              {mascategorias.map((c) => (
                 <NavDropdown.Item>
                   <NavLink
                     exact={true}

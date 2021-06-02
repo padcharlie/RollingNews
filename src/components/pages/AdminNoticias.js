@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment} from "react";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -13,7 +13,7 @@ const  mostrarNoticias =
       <p>¡Hora de escribir noticias!</p>
     );
     const history = useHistory();
-    const [loggedAdmin, setLoggedAdmin] = useState(JSON.parse(localStorage.getItem("loggedAdmin")) );
+    const loggedAdmin = JSON.parse(localStorage.getItem("loggedAdmin"));
     const bloquearPagina = ()=>{
       if (loggedAdmin === ""){Swal.fire({
           icon: "error",

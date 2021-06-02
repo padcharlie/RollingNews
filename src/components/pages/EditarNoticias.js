@@ -22,9 +22,8 @@ export default function EditarNoticias(props) {
     const {_id}=useParams();
     const [previewCounter,setPreviewCounter] = useState("")
     const history = useHistory();
-    const [loggedAdmin, setLoggedAdmin] = useState(
-      JSON.parse(localStorage.getItem("loggedAdmin"))
-    );
+    const loggedAdmin = JSON.parse(localStorage.getItem("loggedAdmin"))
+    
     
     const consultarNoticia = async() =>{
         try {
@@ -61,8 +60,7 @@ export default function EditarNoticias(props) {
     }
 
     const handleSubmit = async(e) =>{
-        e.preventDefault();
-        console.log("titulo",rangoTexto(resumenRef.current.value))
+        e.preventDefault(); 
         if(campoRequerido(tituloRef.current.value) && campoRequerido(resumenRef.current.value) && campoRequerido(detalleRef.current.value) && campoRequerido(imgRef.current.value) && campoRequerido(imgaltRef.current.value) &&  campoRequerido(autorRef.current.value) && rangoTexto(resumenRef.current.value) ){
           try{
             const noticiaModificada={

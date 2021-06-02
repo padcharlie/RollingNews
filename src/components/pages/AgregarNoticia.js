@@ -19,9 +19,7 @@ export default function AgregarNoticia(props) {
   const [imgalt2, setImgAlt2] = useState("");
   const [destacada, setDestacada] = useState(false);
 
-  const [loggedAdmin, setLoggedAdmin] = useState(
-    JSON.parse(localStorage.getItem("loggedAdmin"))
-  );
+  const loggedAdmin = JSON.parse(localStorage.getItem("loggedAdmin"))
 
   const URLNews = process.env.REACT_APP_API_URL_NEWS;
 
@@ -84,6 +82,7 @@ export default function AgregarNoticia(props) {
         }
         e.target.reset();
         props.consultarNews();
+        history.push("/admin")
       } catch (error) {
         console.log(error);
         Swal.fire(" NO agregada", "Error de conexión con el servidor", "error");

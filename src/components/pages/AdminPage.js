@@ -1,12 +1,9 @@
-import React, { useState } from "react";
 import { ListGroup, ListGroupItem } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import Swal from "sweetalert2";
 export default function AdminPage() {
   const history = useHistory();
-  const [loggedAdmin, setLoggedAdmin] = useState(
-    JSON.parse(localStorage.getItem("loggedAdmin"))
-  );
+  const loggedAdmin = JSON.parse(localStorage.getItem("loggedAdmin"))
   const bloquearPagina = () => {
     if (loggedAdmin === "") {
       Swal.fire({

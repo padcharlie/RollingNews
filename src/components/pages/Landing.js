@@ -41,7 +41,7 @@ export default function Landing(props) {
       <Container className="d-flex w-75 my-2 mx-auto">
         <CarrouselSecciones
           news={props.news}
-          categoria="Pruebas"
+          categoria="Actualidad"
         ></CarrouselSecciones>
       </Container>
       <Container className="d-flex w-75 my-2 mx-auto">
@@ -54,7 +54,7 @@ export default function Landing(props) {
       <Container className="d-flex w-75 my-2 mx-auto">
         <CarrouselSecciones
           news={props.news}
-          categoria="Actualidad"
+          categoria="Tecnologia"
         ></CarrouselSecciones>
       </Container>
       <Container className="d-flex w-75 my-2 mx-auto">

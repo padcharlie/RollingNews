@@ -1,4 +1,3 @@
-import React, { Fragment } from 'react';
 import {NavLink} from 'react-router-dom';
 import "../common/Navegacion.css";
 
@@ -21,9 +20,9 @@ const Footer = () => {
       </div>
       <div className='mx-3 mt-2'>
 <h6>Encontranos en:</h6>
-<a href="https://es-la.facebook.com/" target="_blank" className='text-light'>Facebook</a> <br />
-<a href="https://www.instagram.com/rollingcodeschool/" target="_blank" className='text-light'>Instagram</a> <br />
-<a href="https://www.youtube.com/" target="_blank" className='text-light'>Youtube</a> <br />
+<a href="https://es-la.facebook.com/" target="_blank" rel="noreferrer" className='text-light'>Facebook</a> <br />
+<a href="https://www.instagram.com/rollingcodeschool/" rel="noreferrer" target="_blank" className='text-light'>Instagram</a> <br />
+<a href="https://www.youtube.com/" target="_blank" rel="noreferrer" className='text-light'>Youtube</a> <br />
 </div>
 </div>
 <div className='d-flex justify-content-center'>
