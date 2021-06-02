@@ -203,8 +203,9 @@ export default function EditarNoticias(props) {
             </Form.Group>
           </Form.Row>
           <FormGroup>
-            <Label for="exampleSelectMulti">Categoría - (Categoría antigua: {""}{noticia.category})</Label>
             
+            <Label for="exampleSelectMulti">Categoría - (Categoría antigua: {""}{noticia.category})</Label>
+   
             <Input
               type="select"
               name="selectMulti"

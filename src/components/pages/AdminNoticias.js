@@ -8,7 +8,7 @@ export default function AdminNoticias(props) {
 const noticias = props.news
 const  mostrarNoticias =
     (noticias.length > 0) ? (
-      noticias.map((n) => <Noticias new={n} key={n.id} consultarNews={props.consultarNews} />)
+      noticias.map((n) => <Noticias new={n} key={n._id} consultarNews={props.consultarNews} />)
     ) : (
       <p>¡Hora de escribir noticias!</p>
     );
