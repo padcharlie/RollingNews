@@ -15,6 +15,7 @@ import EditarNoticias from "./components/pages/EditarNoticias";
 import AdminCategorias from "./components/pages/AdminCategorias";
 import AdminPage from "./components/pages/AdminPage";
 import AboutUs from "./components/pages/AboutUs";
+import Terminos from "./components/pages/Terminos";
 
 
 function App() {
@@ -129,6 +130,9 @@ function App() {
           </Route>
             <Route exact path='/aboutUs'>
             <AboutUs />
+          </Route>
+            <Route exact path='/TerminosCondiciones'>
+            <Terminos />
           </Route>
           <Route exact path="*">
             <Error404 /> </Route>
