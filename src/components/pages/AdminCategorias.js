@@ -131,8 +131,12 @@ const eliminarNoticias = async (name)=>{
             type="text"
             placeholder="Ingrese una categoría"
             className="form-control"
+            aria-describedby="helpBlock"
             onChange={(e) => setName(e.target.value)}
           />
+          <Form.Text id="helpBlock" muted>
+            Por favor no incluya acentos ni signos de puntuación
+          </Form.Text>
           <Button className="btn my-1 btn-light btn-outline-primary" type="submit">
             Agregar
           </Button>
