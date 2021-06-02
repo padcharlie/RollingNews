@@ -12,7 +12,7 @@ export default function AdminCategorias(props) {
     const URLCats = process.env.REACT_APP_API_URL_CAT; 
     const URLNEWS = process.env.REACT_APP_API_URL_NEWS;
     const history = useHistory();
-    const [loggedAdmin, setLoggedAdmin] = useState(JSON.parse(localStorage.getItem("loggedAdmin")));
+    const loggedAdmin = JSON.parse(localStorage.getItem("loggedAdmin"));
     const bloquearPagina = ()=>{
       if (loggedAdmin === ""){Swal.fire({
           icon: "error",
@@ -96,8 +96,7 @@ const eliminarNoticias = async (name)=>{
                   "Content-Type": "application/json",
                 },
               });
-              console.log(respuesta)
-                
+              
               if (respuesta.status === 200) {
                 eliminarNoticias(name)
                 Swal.fire(
@@ -106,6 +105,7 @@ const eliminarNoticias = async (name)=>{
                   "success"
                   );
                   props.consultarCats();
+                  props.consultarNews()
               }
              
             } catch (error) {

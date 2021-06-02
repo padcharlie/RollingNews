@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutUs = () => {
     return (
-            <div>
+            <div className="container">
                     <div className='d-flex mb-5 flex-wrap justify-content-evenly'>
                             <div className='mx-5'>
             <h1 className=' my-5'>Trabajamos dia a dia en lo que amamos <br /> para traerles las noticias mas actuales <br /> desde todas las partes 

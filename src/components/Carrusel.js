@@ -6,7 +6,7 @@ import '../index.css';
 export default function Carrusel(props) {
 
   const destacada = props.news.filter((n)=>n.destacada === true)
-const mostarCarousel= (destacada != []) ? (<Carousel className="w-75 mx-auto ">
+const mostarCarousel= (destacada !== []) ? (<Carousel className="w-75 mx-auto ">
 {destacada.map((n)=><Carousel.Item key={n._id}>
 <img
 className="w-100"
