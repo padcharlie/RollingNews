@@ -138,8 +138,8 @@ export default function Navegacion(props) {
         {mostrarNoAdmin()}
         <ul className="navbar-nav ml-auto">
           <div className="hori-selector">
-            <div className="left"></div>
-            <div className="rigth"></div>
+            {/*<div className="left"></div>
+            <div className="rigth"></div>*/}
           </div>
           <li className="nav-item active">
             <NavLink
