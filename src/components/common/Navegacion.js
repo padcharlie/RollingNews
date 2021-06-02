@@ -6,7 +6,7 @@ import ModalLogin from "./ModalLogin";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../common/Navegacion.css";
 import $ from "jquery";
-import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faPlusSquare, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navegacion(props) {
   const [loggedAdmin, setLoggedAdmin] = useState(
@@ -109,15 +109,14 @@ export default function Navegacion(props) {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-mainbg">
-      <NavLink
+      <Link
         exact={true}
-        to="/"
+       to="/"
         id="nav-link"
         className="navbar-brand navbar-logo"
       >
         Rolling News
-      </NavLink>
-
+      </Link>
       <button
         className="navbar-toggler"
         onClick={function () {
@@ -130,10 +129,10 @@ export default function Navegacion(props) {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <i className="fas fa-barra text-white"></i>
+        <FontAwesomeIcon className="text-light "icon={faPlusSquare}></FontAwesomeIcon>
       </button>
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        {mostrarAdmin()}
+      <div  className="collapse navbar-collapse" id="navbarSupportedContent">
+      {mostrarAdmin()}
         {mostrarNoAdmin()}
         <ul className="navbar-nav ml-auto">
           <div className="hori-selector">
@@ -143,7 +142,7 @@ export default function Navegacion(props) {
           <li className="nav-item active">
             <NavLink
               exact={true}
-              to="/categorias"
+              to="/categorias/Actualidad"
               id="nav-link"
               className="nav-link"
             >
@@ -153,7 +152,7 @@ export default function Navegacion(props) {
           <li className="nav-item active">
             <NavLink
               exact={true}
-              to="/categorias"
+              to="/categorias/Espectaculos"
               id="nav-link"
               className="nav-link"
             >
@@ -163,7 +162,7 @@ export default function Navegacion(props) {
           <li className="nav-item active">
             <NavLink
               exact={true}
-              to="/categorias"
+              to="/categorias/Tecnologia"
               id="nav-link"
               className="nav-link"
             >
@@ -173,7 +172,7 @@ export default function Navegacion(props) {
           <li className="nav-item active">
             <NavLink
               exact={true}
-              to="/categorias"
+              to="/categorias/Deportes"
               id="nav-link"
               className="nav-link"
             >
@@ -181,13 +180,13 @@ export default function Navegacion(props) {
             </NavLink>
           </li>
           <li>
-            <NavDropdown title="Más" className="dropdown" id="nav-link">
+              <NavDropdown title="Más" className='dropdown ' id="nav-link">
               {props.cats.map((c) => (
                 <NavDropdown.Item>
                   <NavLink
                     exact={true}
                     to={"/categorias/" + c.name}
-                    className="nav-link"
+                    className="nav-link colorMorado"
                   >
                     {c.name}
                   </NavLink>

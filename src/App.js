@@ -116,7 +116,7 @@ function App() {
             <AdminCategorias
               news={news}
               cats={cats}
-              admins={admins}
+              consultarNews={consultarNews}
               consultarCats={consultarCats}
             />
           </Route>

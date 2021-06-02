@@ -47,10 +47,10 @@ export default function EditarNoticias(props) {
     const handleCategory = (e) => {
         setCategoria(e.target.value);
       };
-      const handleDate = (e) => {
+    const handleDate = (e) => {
         setDate(e.target.value);
       };
-    
+  
       const handleDestacada = () =>
     {
       if (destacada === false) {
@@ -62,7 +62,8 @@ export default function EditarNoticias(props) {
 
     const handleSubmit = async(e) =>{
         e.preventDefault();
-        if(campoRequerido(tituloRef.current.value) && campoRequerido(resumenRef.current.value) && campoRequerido(detalleRef.current.value) && campoRequerido(imgRef.current.value) && campoRequerido(imgaltRef.current.value) &&   rangoTexto(resumenRef.current.value) ){
+        console.log("titulo",rangoTexto(resumenRef.current.value))
+        if(campoRequerido(tituloRef.current.value) && campoRequerido(resumenRef.current.value) && campoRequerido(detalleRef.current.value) && campoRequerido(imgRef.current.value) && campoRequerido(imgaltRef.current.value) &&  campoRequerido(autorRef.current.value) && rangoTexto(resumenRef.current.value) ){
           try{
             const noticiaModificada={
              title: tituloRef.current.value,
@@ -201,6 +202,7 @@ export default function EditarNoticias(props) {
               name="selectMulti"
               id="exampleSelectMulti"
               multiple
+              required
             >
               {props.cats.map((c) => (
               <option value={c.name} onClick={handleCategory} key={c._id}>
@@ -221,7 +223,7 @@ export default function EditarNoticias(props) {
             </Form.Group>
             <Form.Group as={Col}>
               <Form.Label>Fecha</Form.Label>
-              <Form.Control type="date" onSelect={handleDate} defaultValue={noticia.date}/>
+              <Form.Control type="date" onSelect={handleDate} required defaultValue={noticia.date}/>
             </Form.Group>
           </Form.Row>
           <Form.Group controlId="formBasicCheckbox">
