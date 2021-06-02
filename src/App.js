@@ -16,7 +16,7 @@ import AdminCategorias from "./components/pages/AdminCategorias";
 import AdminPage from "./components/pages/AdminPage";
 import AboutUs from "./components/pages/AboutUs";
 import Terminos from "./components/pages/Terminos";
-
+import ContacUs from "./components/pages/ContacUs"
 
 function App() {
   const URLCAT = process.env.REACT_APP_API_URL_CAT;
@@ -135,7 +135,11 @@ function App() {
             <Terminos />
           </Route>
           <Route exact path="*">
-            <Error404 /> </Route>
+            <Error404 /> 
+          </Route>
+          <Route exact path="/contacUs">
+            <ContacUs/>
+          </Route>
         </Switch>
         <Pie />
       </Router>
