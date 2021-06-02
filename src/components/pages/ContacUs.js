@@ -17,7 +17,8 @@ const ContacUs = () => {
     
 
     return (
-        <Form onSubmit={sendConsulta}>
+        <Form className="container mt-3" onSubmit={sendConsulta}>
+            <h2>Envíe su consulta, comentario, opinión, sugerencia...</h2>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1" id='email'>
                 <Form.Label>Email</Form.Label>
                 <Form.Control type="email" placeholder="name@example.com" />

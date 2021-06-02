@@ -134,11 +134,11 @@ function App() {
             <Route exact path='/TerminosCondiciones'>
             <Terminos />
           </Route>
-          <Route exact path="*">
-            <Error404 /> 
-          </Route>
           <Route exact path="/contacUs">
             <ContacUs/>
+          </Route>
+          <Route exact path="*">
+            <Error404 /> 
           </Route>
         </Switch>
         <Pie />
