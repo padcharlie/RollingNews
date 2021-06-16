@@ -13,7 +13,7 @@ export default function Landing(props) {
         <Bannersuperior />
       </div>
       <Carrusel news={props.news} />
-      <Container className="text-centerw-75 ">
+      <Container className="text-center w-75">
         <Carousel className="mt-3">
           <Carousel.Item>
             <img

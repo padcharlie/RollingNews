@@ -92,11 +92,6 @@ export default function ModalLogin(props) {
             <Button type="submit">Sign in</Button>
           </Form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer>
       </Modal>
     </>
   );

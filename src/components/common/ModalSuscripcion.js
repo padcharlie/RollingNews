@@ -90,11 +90,6 @@ export default function ModalSuscripcion() {
       <Button type="submit">Suscribirse</Button>
     </Form>
               </Modal.Body>
-              <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                  Close
-                </Button>
-              </Modal.Footer>
             </Modal>
           </>
         )
