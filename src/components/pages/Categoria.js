@@ -17,8 +17,10 @@ const  mostrarNoticias =
 
   return (
     <Fragment>
+      <div className="container">
       <h1>{params.name}</h1>
       {mostrarNoticias}
+      </div>
     </Fragment>
   );
 }

@@ -8,9 +8,9 @@ const ContacUs = () => {
 
         emailjs.sendForm('service_xpq6501', 'template_qdsvzkb', e.target, 'user_VuOzu2MjCeCYYEbY56bbP')
             .then((result) => {
-                alert('mensaje enviado');
+                alert('Mensaje enviado');
             }, (error) => {
-                alert('error al enviar el mensaje');
+                alert('Error al enviar el mensaje');
             });
         e.target.reset();
     }
@@ -27,8 +27,8 @@ const ContacUs = () => {
                 <Form.Label>Ingrese su consulta</Form.Label>
                 <Form.Control as="textarea" rows={3} />
             </Form.Group>
-            <Button variant="secondary" >
-                  enviar
+            <Button className="my-3" variant="secondary" >
+                  Enviar
                 </Button>
         </Form>
     );
