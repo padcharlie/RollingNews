@@ -7,7 +7,7 @@ const CarrouselSecciones = (props) => {
     .filter((n) => n.category === props.categoria)
     .slice(0, 3);
 
-  const mostrar = props.news ? (
+  const mostrar = soloTresNews ? (
     <CardColumns>
       {" "}
       {soloTresNews

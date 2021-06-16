@@ -68,6 +68,7 @@ export default function ModalLogin(props) {
                 <FormGroup>
                   <Label for="exampleEmail">Email</Label>
                   <Input
+                  required
                     type="email"
                     name="email"
                     id="exampleEmail"
@@ -80,6 +81,7 @@ export default function ModalLogin(props) {
                 <FormGroup>
                   <Label for="examplePassword">Password</Label>
                   <Input
+                  required
                     type="password"
                     name="password"
                     id="examplePassword"
@@ -92,11 +94,6 @@ export default function ModalLogin(props) {
             <Button type="submit">Sign in</Button>
           </Form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer>
       </Modal>
     </>
   );

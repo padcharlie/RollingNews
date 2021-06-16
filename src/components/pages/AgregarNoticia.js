@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {NavLink} from "react-router-dom"
 import { Col, Container, Form, Button } from "react-bootstrap";
 import { useHistory } from "react-router";
 import { FormGroup, Label, Input } from "reactstrap";
@@ -219,9 +220,18 @@ export default function AgregarNoticia(props) {
         </Form.Group>
 
         <div class="d-flex justify-content-center">
+        <Button
+            type="button"
+           
+            className="btn-light btn-outline-dark d-flex justify-center w-20 my-3 mx-2"
+          ><NavLink exact={true} to="/admin/noticias" >
+Volver sin publicar
+          </NavLink>
+            
+          </Button>
           <Button
             type="submit"
-            className="boton d-flex justify-center w-20 my-3"
+            className="boton d-flex justify-center w-20 my-3 mx-2"
           >
             Publicar
           </Button>

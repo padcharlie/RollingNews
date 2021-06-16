@@ -1,5 +1,4 @@
 import "./App.css";
-import { Fragment } from "react/cjs/react.production.min";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navegacion from "./components/common/Navegacion";
@@ -7,7 +6,7 @@ import Landing from "./components/pages/Landing";
 import Pie from "./components/common/Pie";
 import Categoria from "./components/pages/Categoria";
 import Error404 from "./components/pages/Error404";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Fragment } from "react";
 import Detalle from "./components/pages/Detalle";
 import AgregarNoticia from "./components/pages/AgregarNoticia";
 import AdminNoticias from "./components/pages/AdminNoticias";

@@ -1,6 +1,6 @@
 import React from 'react';
 import emailjs from 'emailjs-com'
-import Form from 'react-bootstrap/Form'
+import {Button,Form} from 'react-bootstrap'
 
 const ContacUs = () => {
     function sendConsulta(e) {
@@ -8,9 +8,9 @@ const ContacUs = () => {
 
         emailjs.sendForm('service_xpq6501', 'template_qdsvzkb', e.target, 'user_VuOzu2MjCeCYYEbY56bbP')
             .then((result) => {
-                alert('mensaje enviado');
+                alert('Mensaje enviado');
             }, (error) => {
-                alert('error al enviar el mensaje');
+                alert('Error al enviar el mensaje');
             });
         e.target.reset();
     }
@@ -27,6 +27,9 @@ const ContacUs = () => {
                 <Form.Label>Ingrese su consulta</Form.Label>
                 <Form.Control as="textarea" rows={3} />
             </Form.Group>
+            <Button className="my-3" variant="secondary" >
+                  Enviar
+                </Button>
         </Form>
     );
 };
