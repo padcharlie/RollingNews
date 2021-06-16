@@ -1,6 +1,6 @@
 import React from 'react';
 import emailjs from 'emailjs-com'
-import Form from 'react-bootstrap/Form'
+import {Button,Form} from 'react-bootstrap'
 
 const ContacUs = () => {
     function sendConsulta(e) {
@@ -27,6 +27,9 @@ const ContacUs = () => {
                 <Form.Label>Ingrese su consulta</Form.Label>
                 <Form.Control as="textarea" rows={3} />
             </Form.Group>
+            <Button variant="secondary" >
+                  enviar
+                </Button>
         </Form>
     );
 };
