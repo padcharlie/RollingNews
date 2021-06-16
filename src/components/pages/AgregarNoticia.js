@@ -222,16 +222,16 @@ export default function AgregarNoticia(props) {
         <div class="d-flex justify-content-center">
         <Button
             type="button"
-            variant="secondary"
-            className="boton d-flex justify-center w-20 my-3"
+           
+            className="btn-light btn-outline-dark d-flex justify-center w-20 my-3 mx-2"
           ><NavLink exact={true} to="/admin/noticias" >
-Publicar
+Volver sin publicar
           </NavLink>
             
           </Button>
           <Button
             type="submit"
-            className="boton d-flex justify-center w-20 my-3"
+            className="boton d-flex justify-center w-20 my-3 mx-2"
           >
             Publicar
           </Button>
