@@ -11,7 +11,6 @@ export default function Publicidad() {
 
     return (
         <Modal
-                className="w-75"
                 show={show}
                 onHide={() => setShow(false)}
                 dialogClassName="modal-90w"

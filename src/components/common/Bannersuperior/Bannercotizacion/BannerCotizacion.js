@@ -12,7 +12,6 @@ export default function BannerCotizacion() {
       );
       const cotizaciones = await respuesta.json();
       setDolar(cotizaciones);
-      console.log("dolar", cotizaciones);
       setCargando(false);
     } catch (error) {
       console.log(error);

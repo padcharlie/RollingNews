@@ -1,11 +1,21 @@
 import { ListGroup, ListGroupItem } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import Swal from "sweetalert2";
-export default function AdminPage() {
+export default function AdminPage(props) {
   const history = useHistory();
   const loggedAdmin = JSON.parse(localStorage.getItem("loggedAdmin"))
   const bloquearPagina = () => {
-    if (loggedAdmin === "") {
+    let isAdmin = false
+    const admins = props.admins.map((name)=>{
+      if (loggedAdmin === name.name){
+        isAdmin=true
+      }
+    })
+    if (isAdmin) {
+      void(0)
+    }else{
+      console.log("props",props.admins)
+    console.log("logged admin",loggedAdmin)
       Swal.fire({
         icon: "error",
         title: "Oops...",
@@ -14,6 +24,7 @@ export default function AdminPage() {
       }).then(history.push("/"));
     }
   };
+
   return (
     <div>
       {bloquearPagina()}

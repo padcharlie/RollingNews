@@ -87,6 +87,7 @@ function App() {
           </Route>
           <Route exact path="/admin">
             <AdminPage
+            admins={admins}
             />
           </Route>
           <Route exact path="/admin/agregar">

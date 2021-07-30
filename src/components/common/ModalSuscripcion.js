@@ -3,7 +3,6 @@ import { Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
 import React from 'react'
 import { useState } from 'react';
 import emailjs from 'emailjs-com';
-import { campoRequerido, rangoTexto } from "./helpers";
 
 
 export default function ModalSuscripcion() {

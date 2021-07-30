@@ -94,9 +94,18 @@ export default function AgregarNoticia(props) {
   };
 
   const history = useHistory();
-
   const bloquearPagina = () => {
-    if (loggedAdmin === "") {
+    let isAdmin = false
+    const admins = props.admins.map((name)=>{
+      if (loggedAdmin === name.name){
+        isAdmin=true
+      }
+    })
+    if (isAdmin) {
+      void(0)
+    }else{
+      console.log("props",props.admins)
+    console.log("logged admin",loggedAdmin)
       Swal.fire({
         icon: "error",
         title: "Oops...",
@@ -105,7 +114,7 @@ export default function AgregarNoticia(props) {
       }).then(history.push("/"));
     }
   };
-
+ 
   return (
     <Container>
       {bloquearPagina()}

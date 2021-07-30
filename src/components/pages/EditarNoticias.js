@@ -79,13 +79,6 @@ export default function EditarNoticias(props) {
              category,
              destacada
             };
-
-           
-
-           
-
-           
-           console.log('Noticia modificada =', noticiaModificada)
             const respuesta = await fetch(`${URLNEWS}/${noticia._id}`,{
               method: "PUT",
               headers: {"Content-Type": "application/json"},
@@ -110,16 +103,26 @@ export default function EditarNoticias(props) {
         }
       }
 
-  const bloquearPagina = ()=>{
-    if (loggedAdmin === ""){Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "¡Debe ser admin para ingresar!",
-        allowOutsideClick: false,
-      }).then(history.push("/"))
- }};
-
-
+      const bloquearPagina = () => {
+        let isAdmin = false
+        const admins = props.admins.map((name)=>{
+          if (loggedAdmin === name.name){
+            isAdmin=true
+          }
+        })
+        if (isAdmin) {
+          void(0)
+        }else{
+          console.log("props",props.admins)
+        console.log("logged admin",loggedAdmin)
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "¡Debe ser admin para ingresar!",
+            allowOutsideClick: false,
+          }).then(history.push("/"));
+        }
+      };
 
     return (
         <Container>

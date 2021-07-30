@@ -14,14 +14,27 @@ const  mostrarNoticias =
     );
     const history = useHistory();
     const loggedAdmin = JSON.parse(localStorage.getItem("loggedAdmin"));
-    const bloquearPagina = ()=>{
-      if (loggedAdmin === ""){Swal.fire({
+    const bloquearPagina = () => {
+      let isAdmin = false
+      const admins = props.admins.map((name)=>{
+        if (loggedAdmin === name.name){
+          isAdmin=true
+        }
+      })
+      if (isAdmin) {
+        void(0)
+      }else{
+        console.log("props",props.admins)
+      console.log("logged admin",loggedAdmin)
+        Swal.fire({
           icon: "error",
           title: "Oops...",
           text: "¡Debe ser admin para ingresar!",
           allowOutsideClick: false,
-        }).then(history.push("/"))
-   }}; 
+        }).then(history.push("/"));
+      }
+    };
+  
 
   return (
     <Fragment>
