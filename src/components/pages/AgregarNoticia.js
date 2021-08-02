@@ -214,7 +214,7 @@ export default function AgregarNoticia(props) {
           </Form.Group>
           <Form.Group as={Col}>
             <Form.Label>Fecha</Form.Label>
-            <Form.Control type="date" onChange={(e) => setDate(e.target.value)} onSelect={handleDate} />
+            <Form.Control type="date" onChange={handleDate} onSelect={handleDate} />
           </Form.Group>
         </Form.Row>
         <Form.Group controlId="formBasicCheckbox">
