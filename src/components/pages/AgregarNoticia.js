@@ -194,9 +194,6 @@ export default function AgregarNoticia(props) {
             id="exampleSelectMulti"
             multiple
             onChange={(e) => setCategory(e.target.value)}
-            
-            
-
           >
             {props.cats.map((c) => (
               <option value={c.name} onClick={handleCategory} key={c._id}>
@@ -217,7 +214,7 @@ export default function AgregarNoticia(props) {
           </Form.Group>
           <Form.Group as={Col}>
             <Form.Label>Fecha</Form.Label>
-            <Form.Control type="date" onSelect={handleDate} />
+            <Form.Control type="date" onChange={(e) => setDate(e.target.value)} onSelect={handleDate} />
           </Form.Group>
         </Form.Row>
         <Form.Group controlId="formBasicCheckbox">
